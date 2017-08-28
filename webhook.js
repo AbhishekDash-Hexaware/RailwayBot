@@ -24,9 +24,12 @@ let travellers_data;
     }
     else if(request.body.result.action=="CLASSQUICK"){
       if(request.body.result.actionIncomplete==false){
+        console.log("Quota Handler");
         quotaHandler(request,response);
       }//QUICK REPLIES FOR QUOTA PROMPT
+
       else if(request.body.result.actionIncomplete==true){
+        console.log("Class Handler");
         classHandler(request,response);
       }
     }
@@ -94,7 +97,7 @@ let travellers_data;
   }
 
     function classHandler(request,response){
-
+      console.log("Executing Class Function");
       let trainNo=request.body.result.parameters.trainNumber;
       let src=request.body.result.parameters.source;
       let dst=request.body.result.parameters.destination;
@@ -110,6 +113,7 @@ let travellers_data;
   }
 
   function quotaHandler(request,response){
+    console.log("Executing Quota Function");
     customResponseClass.Quota(response);
   }
 

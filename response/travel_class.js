@@ -43,6 +43,7 @@ module.exports = {
     //end of 'ClassQuick' function
   },
   'Quota' : function(response){
+    console.log("Building Quota Prompt")l
     var facebookResponse={
                             "speech": "",
                             "displayText": "",
