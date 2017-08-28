@@ -23,7 +23,12 @@ let travellers_data;
         trainsHandler(request,response);
     }
     else if(request.body.result.action=="CLASSQUICK"){
+      if(request.body.result.actionIncomplete==false){
+        quotaHandler(request,response);
+      }//QUICK REPLIES FOR QUOTA PROMPT
+      else if(request.body.result.actionIncomplete==true){
         classHandler(request,response);
+      }
     }
     else if(request.body.result.action=="SEAT"){
         seatHandler(request,response);
@@ -63,14 +68,14 @@ let travellers_data;
     let dest=request.body.result.parameters.destination;
     let doj=request.body.result.parameters.date;
     let now =new Date();
-    
+
     let day = dateformat(request.body.result.parameters.date,"ddd").toUpperCase();
     doj=new Date(doj);
-    
+
 
     console.log("accumulated data:",src,dest,doj,day);
     console.log("date of journey: ",doj+" current date",now);
-    
+
 
     if(doj<now) {
       sendMsg(response,"I see! you want to travel in the past, but trains cant help you :P");
@@ -102,6 +107,10 @@ let travellers_data;
 
       customResponseClass.ClassQuick(cls,response);
 
+  }
+
+  function quotaHandler(request,response){
+    customResponseClass.Quota(response);
   }
 
   function seatHandler(request,response){

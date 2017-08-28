@@ -4,7 +4,7 @@ module.exports = {
     var dynamicBody=[];
 
     var messageOne = "Please choose the seating class.";
-    
+
 
     //checking data
     // console.log(train_number);
@@ -20,7 +20,7 @@ module.exports = {
        dynamicBody.push({
          "content_type":"text",
          "title":className,
-         "payload":classPayload                           
+         "payload":classPayload
        })
      }
      var facebookResponse={
@@ -41,5 +41,39 @@ module.exports = {
     response.send(facebookResponse);
 
     //end of 'ClassQuick' function
+  },
+  'Quota' : function(response){
+    var facebookResponse={
+                            "speech": "",
+                            "displayText": "",
+                            "data": {
+                              "facebook": [
+                                {
+                                    "text":"Could you please choose the Quota from these options. If your Quota is not listed, please type it out.",
+                                    "quick_replies":[
+                                    {
+                                      "content_type":"text",
+                                      "title":"General",
+                                      "payload":"general"
+                                    },
+                                    {
+                                      "content_type":"text",
+                                      "title":"RAC",
+                                      "payload":"reservation against cancellation"
+                                    },
+                                    {
+                                      "content_type":"text",
+                                      "title":"Senior Citizen",
+                                      "payload":"senior citizen"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            "contextOut": [],
+                            "source": "DuckDuckGo"
+                          }
+
+  response.send(facebookResponse);
   }
 }

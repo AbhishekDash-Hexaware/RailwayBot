@@ -16,22 +16,22 @@ module.exports={
 
   var facebookResponse={
 
-    "speech": "",
-    "displayText": "",
-    "data": {
-      "facebook": {
-        "attachment": {
-          "type": "template",
-          "payload": {
-            "template_type": "generic",
-            "elements": dynamicBody
-            }
+          "speech": "",
+          "displayText": "",
+          "data": {
+            "facebook": {
+              "attachment": {
+                "type": "template",
+                "payload": {
+                  "template_type": "generic",
+                  "elements": dynamicBody
+                  }
+                }
+              }
+            },
+          "contextOut": [],
+          "source": "DuckDuckGo"
           }
-        }
-      },
-    "contextOut": [],
-    "source": "DuckDuckGo"
-    }
 
     response.send(facebookResponse);
     console.log("sent");
