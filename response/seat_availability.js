@@ -29,6 +29,31 @@ module.exports={
                   "elements": dynamicBody
                   }
                 }
+              },
+              {
+                  "text":"Is there anything else?",
+                  "quick_replies":[
+                  {
+                    "content_type":"text",
+                    "title":"Find Another Train",
+                    "payload":"find_train"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Check PNR Status",
+                    "payload":"pnr_status"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Another Query",
+                    "payload":"another_query"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"That's all",
+                    "payload":"thanks"
+                  }
+                ]
               }]
             },
           "contextOut": [],
