@@ -17,6 +17,7 @@ app.post('/webhook',function(request,response){
   console.log("WEBHOOK TRIGRED")
   var messege=request.body.result.resolvedQuery;
   console.log("ACTION :",request.body.result.action);
+  console.log("INCOMPLETE :",request.body.result.actionIncomplete);
   console.log("INTENT NAME",request.body.result.metadata.intentName);
   console.log("PARAMETERS : ",JSON.stringify(request.body.result.parameters));
 
