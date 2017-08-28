@@ -19,7 +19,9 @@ module.exports={
           "speech": "",
           "displayText": "",
           "data": {
-            "facebook": {
+            "facebook": [{
+              "text":"Here are the available seats for this train for the next 5 days."
+            },{
               "attachment": {
                 "type": "template",
                 "payload": {
@@ -27,7 +29,7 @@ module.exports={
                   "elements": dynamicBody
                   }
                 }
-              }
+              }]
             },
           "contextOut": [],
           "source": "DuckDuckGo"
