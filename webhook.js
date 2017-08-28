@@ -23,15 +23,10 @@ let travellers_data;
         trainsHandler(request,response);
     }
     else if(request.body.result.action=="CLASSQUICK"){
-      if(request.body.result.actionIncomplete==true){
-        console.log("Quota Handler");
-        quotaHandler(request,response);
-      }//QUICK REPLIES FOR QUOTA PROMPT
 
-      else if(request.body.result.actionIncomplete==false){
-        console.log("Class Handler");
+      
         classHandler(request,response);
-      }
+
     }
     else if(request.body.result.action=="SEAT"){
         seatHandler(request,response);

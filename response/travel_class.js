@@ -41,40 +41,5 @@ module.exports = {
     response.send(facebookResponse);
 
     //end of 'ClassQuick' function
-  },
-  'Quota' : function(response){
-    console.log("Building Quota Prompt");
-    var facebookResponse={
-                            "speech": "",
-                            "displayText": "",
-                            "data": {
-                              "facebook": [
-                                {
-                                    "text":"Could you please choose the Quota from these options. If your Quota is not listed, please type it out.",
-                                    "quick_replies":[
-                                    {
-                                      "content_type":"text",
-                                      "title":"General",
-                                      "payload":"general"
-                                    },
-                                    {
-                                      "content_type":"text",
-                                      "title":"RAC",
-                                      "payload":"reservation against cancellation"
-                                    },
-                                    {
-                                      "content_type":"text",
-                                      "title":"Senior Citizen",
-                                      "payload":"senior citizen"
-                                    }
-                                  ]
-                                }
-                              ]
-                            },
-                            "contextOut": [],
-                            "source": "DuckDuckGo"
-                          }
-
-  response.send(facebookResponse);
   }
 }
