@@ -3,10 +3,10 @@ module.exports={
 
     console.log("forming");
     let dynamicBody=[];
-    let title="Availability Status";
-    for(var i=0;i<data.length;i++){
 
-      let status=data[i].date+"\n"+data[i].status
+    for(var i=0;i<data.length;i++){
+      let title="Seat Status for "+data[i].date;
+      let status=data[i].status
         dynamicBody.push({
           "title": title,
           "subtitle": status,
