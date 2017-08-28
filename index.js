@@ -11,14 +11,14 @@ app.use(bodyParser.json());
 app.get('/', function(request, response) {
   response.send('Hello World!')
 })
-
+//
 app.post('/webhook',function(request,response){
   console.log("WEBHOOK TRIGRED")
   var messege=request.body.result.resolvedQuery;
   console.log("ACTION :",request.body.result.action);
   console.log("INTENT NAME",request.body.result.metadata.intentName);
   console.log("PARAMETERS : ",JSON.stringify(request.body.result.parameters));
-  
+
   webhook(request,response);
 })
 
