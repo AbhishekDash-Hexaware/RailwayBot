@@ -109,9 +109,9 @@ module.exports={
         console.log("Printing splited data",bookingarray[0],bookingarray[1],bookingarray[2])
 
         if (bookingarray[1]=="-"){
-        trainDetailsSubtitle="Status: "+bookingarray[0]+"\nSeat/Berth No: "+bookingarray[2]+"\nCurrent Status: "+currentstatus;
+        trainDetailsSubtitle="Status : "+bookingarray[0]+"\nSeat/Berth No : "+bookingarray[2]+"\nCurrent Status : "+currentstatus;
         }else{
-        trainDetailsSubtitle="Status: "+bookingarray[0]+"\nCoach: "+bookingarray[1]+"\nSeat/Berth No: "+bookingarray[2]+"\nCurrent Status: "+currentstatus;
+        trainDetailsSubtitle="Status : "+bookingarray[0]+"\nCoach : "+bookingarray[1]+"\nSeat/Berth No : "+bookingarray[2]+"\nCurrent Status : "+currentstatus;
         }
       let title="Passenger "+(i+1)+" Booking Status";
         dynamicBody.push({
