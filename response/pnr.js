@@ -101,6 +101,7 @@ module.exports={
         let bookingstatus=travellers_data[i].booking_status;
         let bookingarray=bookingstatus.split('/');
         let currentstatus=travellers_data[i].current_status;
+        var title;
         let trainDetailsSubtitle ;
         //console.log("Printing raw data",bookingstatus);
         //console.log("Printing splited data",bookingarray[0],bookingarray[1],bookingarray[2])
@@ -110,11 +111,12 @@ module.exports={
         }else{
         trainDetailsSubtitle="Status : "+bookingarray[0]+"\nCoach : "+bookingarray[1]+"\nSeat/Berth No : "+bookingarray[2]+"\nCurrent Status : "+currentstatus;
         }
+
         if(travellers_data.length==1){
-          let title="Passenger Booking Status";
+          title="Passenger Booking Status";
         }
         else{
-          let title="Passenger "+(i+1)+" Booking Status";
+          title="Passenger "+(i+1)+" Booking Status";
         }
         dynamicBody.push({
           "title": title,
