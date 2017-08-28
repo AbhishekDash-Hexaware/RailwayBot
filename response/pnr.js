@@ -30,14 +30,8 @@ module.exports={
                                       "elements": [
                                         {
                                           "title": "Journey Details",
-                                          "subtitle": trainDetailsSubtitle,
-                                          "buttons": [
-                                            {
-                                              "type": "postback",
-                                              "title": "More Info",
-                                              "payload": "more_pnr_info"
-                                            }
-                                          ]
+                                          "subtitle": trainDetailsSubtitle
+
                                         },
                                       ]
                                      }
