@@ -17,9 +17,6 @@ module.exports={
                               "data": {
                                 "facebook": [
                                 {
-                                  "text":messageOne
-                                },
-                                {
                                   "text":messageTwo
                                 },
                                 {
@@ -30,7 +27,7 @@ module.exports={
                                       "elements": [
                                         {
                                           "title": "Journey Details",
-                                          "subtitle": trainDetailsSubtitle
+                                          "subtitle": journeySubtitle
 
                                         },
                                       ]
@@ -113,7 +110,12 @@ module.exports={
         }else{
         trainDetailsSubtitle="Status : "+bookingarray[0]+"\nCoach : "+bookingarray[1]+"\nSeat/Berth No : "+bookingarray[2]+"\nCurrent Status : "+currentstatus;
         }
-      let title="Passenger "+(i+1)+" Booking Status";
+        if(travellers_data.length==1){
+          let title="Passenger Booking Status";
+        }
+        else{
+          let title="Passenger "+(i+1)+" Booking Status";
+        }
         dynamicBody.push({
           "title": title,
           "subtitle": trainDetailsSubtitle,
