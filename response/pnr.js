@@ -102,8 +102,8 @@ module.exports={
         let bookingarray=bookingstatus.split('/');
         let currentstatus=travellers_data[i].current_status;
         let trainDetailsSubtitle ;
-        console.log("Printing raw data",bookingstatus);
-        console.log("Printing splited data",bookingarray[0],bookingarray[1],bookingarray[2])
+        //console.log("Printing raw data",bookingstatus);
+        //console.log("Printing splited data",bookingarray[0],bookingarray[1],bookingarray[2])
 
         if (bookingarray[1]=="-"){
         trainDetailsSubtitle="Status : "+bookingarray[0]+"\nSeat/Berth No : "+bookingarray[2]+"\nCurrent Status : "+currentstatus;

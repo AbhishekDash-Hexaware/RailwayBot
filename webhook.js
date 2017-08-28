@@ -24,7 +24,7 @@ let travellers_data;
     }
     else if(request.body.result.action=="CLASSQUICK"){
 
-      
+
         classHandler(request,response);
 
     }
@@ -41,7 +41,7 @@ let travellers_data;
     let action=request.body.result.action
     if(action==="CHECKPNR"){
       var pnrNo=request.body.result.parameters.PnrNumber;
-      console.log("PNR NO:",pnrNo);
+      //console.log("PNR NO:",pnrNo);
       if(pnrNo.length != 10){
         sendMsg(response,"The PNR number is of 10-digits. Please enter a valid PNR number.");
         }else{
@@ -55,7 +55,7 @@ let travellers_data;
         })
       }
   }else{
-    console.log("Printing data",JSON.stringify(travellers_data)+" "+action);
+    //console.log("Printing data",JSON.stringify(travellers_data)+" "+action);
     customResponsePNR.PNRCarousel(travellers_data,response);
   }
 }
