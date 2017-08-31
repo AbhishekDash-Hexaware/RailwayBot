@@ -1,13 +1,13 @@
 module.exports={
   'seatCarousel':function(data,class_name,quota_name,train_name,response) {
-
+    var messageOne="Here are the available seats in the "+train_name+" for the next 5 days."+
     //console.log("forming");
     let dynamicBody=[];
 
     for(var i=0;i<data.length;i++){
       let title="Seat Status for "+data[i].date;
       let status=data[i].status;
-      let subtitle="Status: "+status+" Class: "+class_name+"\nQuota: "+quota_name+"\nTrain: "+train_name;
+      let subtitle="Status: "+status+"\nClass: "+class_name+"\nQuota: "+quota_name;
         dynamicBody.push({
           "title": title,
           "subtitle": subtitle,
@@ -21,7 +21,7 @@ module.exports={
           "displayText": "",
           "data": {
             "facebook": [{
-              "text":"Here are the available seats for this train for the next 5 days."
+              "text":messageOne
             },{
               "attachment": {
                 "type": "template",
