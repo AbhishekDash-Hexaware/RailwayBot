@@ -15,7 +15,7 @@ module.exports=function seatAvailability(trainNo,src,dst,date,cls,quota,callback
     request(options, function (error, response, body){
     if (error) throw new Error(error);
 
-    //console.log(body);
+    console.log(body);
     data=JSON.parse(body);
     //console.log("VALUABLE INFO: ",data.availability);
     callback(data.availability);
