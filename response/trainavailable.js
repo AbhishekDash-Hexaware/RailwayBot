@@ -114,33 +114,41 @@ module.exports = {
     var messageOne="I'm sorry but either there are no trains travelling from "+src+" to "+dst+" on this day or you may have given a source or destination with a wrong spelling.  Please note I don't show results of any Special Trains.";
   //  console.log(src);
   //  console.log(dst);
-    var facebookResponse = [{
-      "text":messageOne
-    },{
-        "text":"Is there anything else?",
-        "quick_replies":[
-        {
-          "content_type":"text",
-          "title":"Try Again",
-          "payload":"find_train"
-        },
-        {
-          "content_type":"text",
-          "title":"PNR Status",
-          "payload":"pnr_status"
-        },
-        {
-          "content_type":"text",
-          "title":"Another Query",
-          "payload":"another_query"
-        },
-        {
-          "content_type":"text",
-          "title":"That's all",
-          "payload":"thanks"
-        }
-      ]
-    }];
+    var facebookResponse = {
+                            "speech": "",
+                            "displayText": "",
+                            "data": {
+                              "facebook": [{
+                                "text":messageOne
+                              },{
+                                      "text":"Is there anything else?",
+                                      "quick_replies":[
+                                      {
+                                        "content_type":"text",
+                                        "title":"Try Again",
+                                        "payload":"find_train"
+                                      },
+                                      {
+                                        "content_type":"text",
+                                        "title":"PNR Status",
+                                        "payload":"pnr_status"
+                                      },
+                                      {
+                                        "content_type":"text",
+                                        "title":"Another Query",
+                                        "payload":"another_query"
+                                      },
+                                      {
+                                        "content_type":"text",
+                                        "title":"That's all",
+                                        "payload":"thanks"
+                                      }
+                                    ]
+                                  }]
+                            },
+                            "contextOut": [],
+                            "source": "DuckDuckGo"
+                          };
 
     response.send(facebookResponse);
   }
