@@ -1,9 +1,10 @@
 var dateformat = require("dateformat")
 let ApiAiApp = require('actions-on-google').ApiAiApp;
-
+var async = require('async');
 var pnrStatus = require('./src/pnrstatus');
 var trainsBetween = require('./src/trainsbetween');
 var seatAvailability = require("./src/availabilty");
+var price = require("./src/price");
 var customResponsePNR = require("./response/pnr");
 var customResponseTrainAvailable = require("./response/trainavailable");
 var customResponseClass = require("./response/travel_class");
