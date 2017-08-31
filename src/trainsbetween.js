@@ -71,7 +71,7 @@ console.log("Travel day :",day);
             data.trains.forEach(function(element) {
                 element.days.forEach(function(element1){
                     if(element1.code === day && element1.runs==="Y"){
-                        console.log("Tomorrow Onwards matches");
+                        //console.log("Tomorrow Onwards matches");
                         //trains.push(element.number+" "+element.name+"\n  Travel Time "+element.travel_time+" hrs");
                         train_number.push(element.number);
                         train_name.push(element.name);
