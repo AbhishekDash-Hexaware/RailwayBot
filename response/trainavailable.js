@@ -38,7 +38,7 @@ console.log(train_cls);
       var title = train_name[i];
       var train_payload = train_number[i]+" seat "+stringifiedClass;
       console.log("Quick Reply Payload Set as : "+train_payload);
-      var trainDetailsSubtitle = "Train no : "+train_number[i]+" Travel Time: "+train_travel_time[i]+"\nDeparture: "+train_schedule_departure[i]+" Hrs\nArrival: "+train_schedule_arrival[i]+"Hrs";
+      var trainDetailsSubtitle = "Train no: "+train_number[i]+" Travel Time: "+train_travel_time[i]+" Hrs\nDeparture: "+train_schedule_departure[i]+" Hrs\nArrival: "+train_schedule_arrival[i]+" Hrs";
 
       dynamicBody.push({
         "title": title,
