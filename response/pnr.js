@@ -75,7 +75,7 @@ module.exports={
                                       },
                                       {
                                         "content_type":"text",
-                                        "title":"Another Query",
+                                        "title":"Another Question",
                                         "payload":"another_query"
                                       },
                                       {
@@ -153,7 +153,7 @@ module.exports={
                                                     },
                                                     {
                                                       "content_type":"text",
-                                                      "title":"Another Query",
+                                                      "title":"Another Question",
                                                       "payload":"another_query"
                                                     },
                                                     {
@@ -191,7 +191,7 @@ module.exports={
                                       },
                                       {
                                         "content_type":"text",
-                                        "title":"Another Query",
+                                        "title":"Another Question",
                                         "payload":"another_query"
                                       },
                                       {
