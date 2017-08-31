@@ -128,7 +128,7 @@ let travellers_data;
       console.log("Reformated Date : "+date);
       //console.log("Train No. "+trainNo+" has the following classes : "+cls.join(","));
 
-      seatAvailability(trainNo,src,dst,date,cls,quota,function(body,err){
+      seatAvailability(trainNo,src,dst,date,cls,quota,function(body,class_name,quota_name,train_name,err){
         if(err==null){
           console.log("No err");
         seatAvailability(trainNo,src,dst,date,cls,quota,function(data,class_name,quota_name,train_name){
