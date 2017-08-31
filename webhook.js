@@ -131,9 +131,9 @@ let travellers_data;
       seatAvailability(trainNo,src,dst,date,cls,quota,function(body,err){
         if(err==null){
           console.log("No err");
-        seatAvailability(trainNo,src,dst,date,cls,quota,function(data){
+        seatAvailability(trainNo,src,dst,date,cls,quota,function(data,class_name,quota_name,train_name){
           console.log("sending");
-          customResponseSeatAvailable.seatCarousel(data,response);
+          customResponseSeatAvailable.seatCarousel(data,class_name,quota_name,train_name,response);
         })
         }else{
           console.log("Err");

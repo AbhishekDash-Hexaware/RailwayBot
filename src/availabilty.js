@@ -18,7 +18,7 @@ module.exports=function seatAvailability(trainNo,src,dst,date,cls,quota,callback
     console.log(body);
     data=JSON.parse(body);
     //console.log("VALUABLE INFO: ",data.availability);
-    callback(data.availability);
+    callback(data.availability,data.class.name,data.quota.quota_name,data.train_name);
     });
 
 }

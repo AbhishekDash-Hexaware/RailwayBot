@@ -1,15 +1,16 @@
 module.exports={
-  'seatCarousel':function(data,response) {
+  'seatCarousel':function(data,class_name,quota_name,train_name,response) {
 
     //console.log("forming");
     let dynamicBody=[];
 
     for(var i=0;i<data.length;i++){
       let title="Seat Status for "+data[i].date;
-      let status=data[i].status
+      let status=data[i].status;
+      let subtitle="Status: "+status+" Class: "+class_name+"\nQuota: "+quota_name+"\nTrain: "+train_name;
         dynamicBody.push({
           "title": title,
-          "subtitle": status,
+          "subtitle": subtitle,
         })
     }
 
