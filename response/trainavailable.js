@@ -8,7 +8,7 @@ module.exports = {
     else{
       var messageOne = "There are "+train_number.length+" trains available.";
     }
-    
+
     var messageTwo = "Is there anything else?";
     //checking data
     // console.log(train_number);
@@ -113,7 +113,7 @@ console.log(train_cls);
     console.log("Building Train Carousel No Data");
 
     var facebookResponse = [{
-      "text":"I'm sorry but there are no trains travelling from "+src+" to "+dst+" on this day."
+      "text":"I'm sorry but either there are no trains travelling from "+src+" to "+dst+" on this day or you may have given a source or destination with a wrong spelling.  Please note I don't show results of any Special Trains."
     },{
         "text":"Is there anything else?",
         "quick_replies":[
