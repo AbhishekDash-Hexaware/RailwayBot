@@ -81,12 +81,12 @@ module.exports = {
                                       },
                                       {
                                         "content_type":"text",
-                                        "title":"PNR Status",
+                                        "title":"Check PNR Status",
                                         "payload":"pnr_status"
                                       },
                                       {
                                         "content_type":"text",
-                                        "title":"Another Query",
+                                        "title":"Another Question",
                                         "payload":"another_query"
                                       },
                                       {
