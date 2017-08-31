@@ -111,7 +111,8 @@ console.log(train_cls);
 
   'TrainCarouselNoData' : function(src,dst,response){
     console.log("Building Train Carousel No Data");
-
+    console.log(src);
+    console.log(dst);
     var facebookResponse = [{
       "text":"I'm sorry but either there are no trains travelling from "+src+" to "+dst+" on this day or you may have given a source or destination with a wrong spelling.  Please note I don't show results of any Special Trains."
     },{
