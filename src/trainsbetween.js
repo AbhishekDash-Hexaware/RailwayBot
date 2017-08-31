@@ -59,7 +59,7 @@ console.log("Travel day :",day);
                                 dynamicCode.push(element.classes[j].code);
                             }
                           }
-                          console.log(dynamicCode);
+                          //console.log(dynamicCode);
                           train_cls.push({"code_data":dynamicCode});
                           dynamicCode=[];
                 }
@@ -78,13 +78,13 @@ console.log("Travel day :",day);
                         train_travel_time.push(element.travel_time);
                         train_schedule_departure.push(element.src_departure_time);
                         train_schedule_arrival.push(element.dest_arrival_time);
-                        
+
                         for(var j=0;j<element.classes.length;j++){
                             if(element.classes[j].available==="Y"){
                                 dynamicCode.push(element.classes[j].code);
                             }
                           }
-                          console.log(dynamicCode);
+                          //console.log(dynamicCode);
                           train_cls.push({"code_data":dynamicCode});
                           dynamicCode=[];
 
@@ -92,11 +92,11 @@ console.log("Travel day :",day);
                 })
             });
         }
-        console.log(JSON.stringify(train_cls));
+        //console.log(JSON.stringify(train_cls));
         if(train_number.length != 0){
             //msg=trains.join("\n");
             console.log("Trains Exist");
-            console.log(JSON.stringify(train_cls));
+            c//onsole.log(JSON.stringify(train_cls));
             callback(train_number,train_name,train_travel_time,train_schedule_arrival,train_schedule_departure,train_cls,null);
         }else{
             console.log("No Train Results");

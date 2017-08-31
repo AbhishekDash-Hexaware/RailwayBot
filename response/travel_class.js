@@ -16,7 +16,7 @@ module.exports = {
 
       var className = train_cls[i];
       var classPayload = "class "+train_cls[i].slice(0,1)+" "+train_cls[i].slice(1);
-      console.log("Outgoing Quick Reply Payload : "+classPayload);
+      //console.log("Outgoing Quick Reply Payload : "+classPayload);
        dynamicBody.push({
          "content_type":"text",
          "title":className,

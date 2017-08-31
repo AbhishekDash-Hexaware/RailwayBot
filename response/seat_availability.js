@@ -1,7 +1,7 @@
 module.exports={
   'seatCarousel':function(data,response) {
 
-    console.log("forming");
+    //console.log("forming");
     let dynamicBody=[];
 
     for(var i=0;i<data.length;i++){
@@ -61,6 +61,6 @@ module.exports={
           }
 
     response.send(facebookResponse);
-    console.log("sent");
+  //  console.log("sent");
   }
 }
