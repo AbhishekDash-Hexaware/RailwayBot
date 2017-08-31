@@ -2,8 +2,13 @@ module.exports = {
   'TrainCarousel' : function(train_number,train_name,train_travel_time,train_schedule_arrival,train_schedule_departure,train_cls,response){
     console.log("Building Train Carousel");
     var dynamicBody=[];
-
-    var messageOne = "There are "+train_number.length+" trains available.";
+    if(train_number.length==1){
+      var messageOne = "There is only "+train_number.length+" train available.";
+    }
+    else{
+      var messageOne = "There are "+train_number.length+" trains available.";
+    }
+    
     var messageTwo = "Is there anything else?";
     //checking data
     // console.log(train_number);
@@ -33,7 +38,7 @@ console.log(train_cls);
       var title = train_name[i];
       var train_payload = train_number[i]+" seat "+stringifiedClass;
       console.log("Quick Reply Payload Set as : "+train_payload);
-      var trainDetailsSubtitle = "No.: "+train_number[i]+" Travel Time: "+train_travel_time[i]+"\nDeparture: "+train_schedule_departure[i]+"\nArrival: "+train_schedule_arrival[i];
+      var trainDetailsSubtitle = "Train no : "+train_number[i]+" Travel Time: "+train_travel_time[i]+"\nDeparture: "+train_schedule_departure[i]+" Hrs\nArrival: "+train_schedule_arrival[i]+"Hrs";
 
       dynamicBody.push({
         "title": title,
@@ -71,7 +76,7 @@ console.log(train_cls);
                                       "quick_replies":[
                                       {
                                         "content_type":"text",
-                                        "title":"Another Transit",
+                                        "title":"Find Another Train",
                                         "payload":"find_train"
                                       },
                                       {
