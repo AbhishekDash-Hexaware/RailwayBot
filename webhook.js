@@ -85,7 +85,7 @@ let travellers_data;
         customResponseTrainAvailable.TrainCarousel(train_number,train_name,train_travel_time,train_schedule_arrival,train_schedule_departure,train_cls,response);
         }else{
           console.log("Err, moving to TrainCarouselNoData");
-          customResponseTrainAvailable.TrainCarouselNoData(response);
+          customResponseTrainAvailable.TrainCarouselNoData(src,dest,response);
         }
       })
     }

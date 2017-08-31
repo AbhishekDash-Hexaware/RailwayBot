@@ -104,12 +104,36 @@ console.log(train_cls);
   },
 
 
-  'TrainCarouselNoData' : function(response){
+  'TrainCarouselNoData' : function(src,dst,response){
     console.log("Building Train Carousel No Data");
 
-    var facebookResponse = {
-
-    };
+    var facebookResponse = [{
+      "text":"I'm sorry but there are no trains travelling from "+src+" to "+dst+" on this day.";
+    },{
+        "text":"Is there anything else?",
+        "quick_replies":[
+        {
+          "content_type":"text",
+          "title":"Try Again",
+          "payload":"find_train"
+        },
+        {
+          "content_type":"text",
+          "title":"PNR Status",
+          "payload":"pnr_status"
+        },
+        {
+          "content_type":"text",
+          "title":"Another Query",
+          "payload":"another_query"
+        },
+        {
+          "content_type":"text",
+          "title":"That's all",
+          "payload":"thanks"
+        }
+      ]
+    }];
 
     response.send(facebookResponse);
   }
