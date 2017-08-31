@@ -111,15 +111,19 @@ module.exports = {
 
   'TrainCarouselNoData' : function(src,dst,response){
     console.log("Building Train Carousel No Data");
-    var messageOne="I'm sorry but either there are no trains travelling from "+src+" to "+dst+" on this day or you may have given a source or destination with a wrong spelling.  Please note I don't show results of any Special Trains.";
-  //  console.log(src);
-  //  console.log(dst);
+    var messageOne="I'm sorry but there are no trains travelling from "+src+" to "+dst+" on this day.";
+    var messageTwo="Or, you may have given me the source or destination with a wrong spelling.";
+    var messageThree="*Please note I don't show results of any Special Trains."
     var facebookResponse = {
                             "speech": "",
                             "displayText": "",
                             "data": {
                               "facebook": [{
                                 "text":messageOne
+                              },{
+                                "text":messageTwo
+                              },{
+                                "text":messageThree
                               },{
                                       "text":"Is there anything else?",
                                       "quick_replies":[
@@ -130,7 +134,7 @@ module.exports = {
                                       },
                                       {
                                         "content_type":"text",
-                                        "title":"PNR Status",
+                                        "title":"Check PNR Status",
                                         "payload":"pnr_status"
                                       },
                                       {
