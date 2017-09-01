@@ -123,7 +123,7 @@ let travellers_data;
       let date=request.body.result.parameters.date;
       let cls=request.body.result.parameters.cls;
       let quota=request.body.result.parameters.quota;
-
+      let age=request.body.result.parameters.quota;
       date=dateformat(date,"dd-mm-yyyy");
       console.log("Reformated Date : "+date);
       //console.log("Train No. "+trainNo+" has the following classes : "+cls.join(","));
