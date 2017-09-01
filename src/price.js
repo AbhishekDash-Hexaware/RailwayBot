@@ -1,4 +1,4 @@
-module.exports=function seatPrice(trainNo,src,dst,date,cls,quota,age){ 
+module.exports=function seatPrice(trainNo,src,dst,date,cls,quota,age,callback){ 
   // function seatPrice(trainNo,src,dst,date,cls,quota,age,callback){
 
     var async = require('async');
