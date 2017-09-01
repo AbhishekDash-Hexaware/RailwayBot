@@ -2,7 +2,6 @@ module.exports=function seatPrice(trainNo,src,dst,date,cls,quota,age){
   // function seatPrice(trainNo,src,dst,date,cls,quota,age,callback){
 
     var async = require('async');
-    var request = require("request");
      
     async.parallel([
 
@@ -22,6 +21,7 @@ module.exports=function seatPrice(trainNo,src,dst,date,cls,quota,age){
 
 function priceInfo(trainNo,src,dst,date,cls,quota,age,callback){
 
+    var request = require("request");
     var price_value;
     var options = {
     method: 'GET',
@@ -49,7 +49,7 @@ function priceInfo(trainNo,src,dst,date,cls,quota,age,callback){
 }
 
 function seatAvailability(trainNo,src,dst,date,cls,quota,callback){
-
+    var request = require("request");
     var options = { 
       method: 'GET',
       url: `http://api.railwayapi.com/v2/check-seat/train/${trainNo}/source/${src}/dest/${dst}/date/${date}/class/${cls}/quota/${quota}/apikey/663h5e2h1b/`,
