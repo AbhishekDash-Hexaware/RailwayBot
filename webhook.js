@@ -123,15 +123,16 @@ let travellers_data;
       let date=request.body.result.parameters.date;
       let cls=request.body.result.parameters.cls;
       let quota=request.body.result.parameters.quota;
-      let age=request.body.result.parameters.age;
+      let age=request.body.result.parameters.age.amount;
       date=dateformat(date,"dd-mm-yyyy");
       console.log("Reformated Date : "+date);
       //console.log("Train No. "+trainNo+" has the following classes : "+cls.join(","));
-      seatPrice(trainNo,src,dst,date,cls,quota,age,function(err,data){
+      seatPrice(trainNo,src,dst,date,cls,quota,age,function(err,multidata){
         if(err!=null){
           console.log("Error occuered");
         }else{
           console.log("DATA",data);
+          customResponseSeatAvailable.seatCarousel(multidata,response);
         }
       });
   }

@@ -1,5 +1,10 @@
 module.exports={
-  'seatCarousel':function(data,class_name,quota_name,train_name,response) {
+  'seatCarousel':function(multidata,response) {
+    var data=multidata[0].availability;
+    var train_name=multidata[0].train_name;
+    var class_name=multidata[0].cls;
+    var quota_name=multidata[0].quota;
+    var price=multidata[1].price;
     var messageOne="Here are the available seats in the "+train_name+" for the next 5 days.";
     //console.log("forming");
     let dynamicBody=[];
@@ -7,7 +12,7 @@ module.exports={
     for(var i=0;i<data.length;i++){
       let title="Seat Status for "+data[i].date;
       let status=data[i].status;
-      let subtitle="Status: "+status+"\nClass: "+class_name+"\nQuota: "+quota_name;
+      let subtitle="Status: "+status+"\nClass: "+class_name+"\nQuota: "+quota_name+"\nFare: ₹"+price;
         dynamicBody.push({
           "title": title,
           "subtitle": subtitle,
