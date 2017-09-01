@@ -20,7 +20,7 @@ module.exports=function seatPrice(trainNo,src,dst,date,cls,quota,age,callback){
     }
 
 function priceInfo(trainNo,src,dst,date,cls,quota,age,callback){
-
+    console.log("PARAMETRES",trainNo,src,dst,date,cls,quota,age)
     var request = require("request");
     var price_value;
     var options = {
@@ -34,7 +34,8 @@ function priceInfo(trainNo,src,dst,date,cls,quota,age,callback){
 
     request(options, function (error, response, body) {
     var cost
-    var data=JSON.parse(body);  
+    var data=JSON.parse(body);
+    console.log(data);  
     data.fare.forEach(function(element){
       if(element.code==cls){
         console.log("Fare for "+cls+" Rs."+element.fare);
