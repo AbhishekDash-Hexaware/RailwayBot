@@ -131,7 +131,7 @@ let travellers_data;
         if(err!=null){
           console.log("Error occuered");
         }else{
-          console.log("DATA",data);
+          // console.log("DATA",data);
           customResponseSeatAvailable.seatCarousel(multidata,response);
         }
       });
