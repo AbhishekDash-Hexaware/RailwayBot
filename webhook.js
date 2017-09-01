@@ -10,6 +10,7 @@ var customResponseTrainAvailable = require("./response/trainavailable");
 var customResponseClass = require("./response/travel_class");
 var sendMsg = require("./response/text_Resp");
 var customResponseSeatAvailable = require("./response/seat_availability")
+var seatPrice= require("./src/price.js")
 
 
 
@@ -123,22 +124,14 @@ let travellers_data;
       let cls=request.body.result.parameters.cls;
       let quota=request.body.result.parameters.quota;
 
-
-
       date=dateformat(date,"dd-mm-yyyy");
       console.log("Reformated Date : "+date);
       //console.log("Train No. "+trainNo+" has the following classes : "+cls.join(","));
-
-      seatAvailability(trainNo,src,dst,date,cls,quota,function(body,class_name,quota_name,train_name,err){
-        if(err==null){
-          console.log("No err");
-        seatAvailability(trainNo,src,dst,date,cls,quota,function(data,class_name,quota_name,train_name){
-          console.log("sending");
-          customResponseSeatAvailable.seatCarousel(data,class_name,quota_name,train_name,response);
-        })
+      seatPrice(trainNo,src,dst,date,cls,quota,age,function(err,data){
+        if(err!=null){
+          console.log("Error occuered");
         }else{
-          console.log("Err");
+          console.log("DATA",data);
         }
-      })
-
+      });
   }
