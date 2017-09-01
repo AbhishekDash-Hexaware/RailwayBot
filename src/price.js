@@ -1,29 +1,27 @@
-// module.exports=function seatPrice(trainNo,src,dst,date,cls,quota,age){
-  var async = require('async');
-  var request = require("request"); 
-  function seatPrice(trainNo,src,dst,date,cls,quota,age){
-  // var async = require('async');
-  // var request = require("request"); 
-    //console.log("executing");
-  async.parallel([
+module.exports=function seatPrice(trainNo,src,dst,date,cls,quota,age){ 
+  // function seatPrice(trainNo,src,dst,date,cls,quota,age,callback){
 
-    function (callback) {
-      seatAvailability(trainNo,src,dst,date,cls,quota,callback)
-    },
+    var async = require('async');
+    var request = require("request");
+     
+    async.parallel([
 
-    function (callback) {
-      priceInfo(trainNo,src,dst,date,cls,quota,age,callback)
+      function (callback) {
+        seatAvailability(trainNo,src,dst,date,cls,quota,callback)
+      },
+
+      function (callback) {
+        priceInfo(trainNo,src,dst,date,cls,quota,age,callback)
+      }
+    ],
+      function (err, results) {
+        console.log(JSON.stringify(results));
+        callback(err,results);
+      });
     }
-  ],
-    function (err, results) {
-      console.log(JSON.stringify(results));
-    });
-    //console.log("executed");
-  }
 
 function priceInfo(trainNo,src,dst,date,cls,quota,age,callback){
 
-    //console.log("executing task 1");
     var price_value;
     var options = {
     method: 'GET',
@@ -52,9 +50,6 @@ function priceInfo(trainNo,src,dst,date,cls,quota,age,callback){
 
 function seatAvailability(trainNo,src,dst,date,cls,quota,callback){
 
-//console.log("executing task 1");
-  // function seatAvailability(trainNo,src,dst,date,cls,kota){
-    //console.log("insde it",trainNo,src,dst,date,cls,quota);
     var options = { 
       method: 'GET',
       url: `http://api.railwayapi.com/v2/check-seat/train/${trainNo}/source/${src}/dest/${dst}/date/${date}/class/${cls}/quota/${quota}/apikey/663h5e2h1b/`,
@@ -65,8 +60,7 @@ function seatAvailability(trainNo,src,dst,date,cls,quota,callback){
     }  
   };
 
-    request(options, function (error, response, body){
-    
+    request(options, function (error, response, body){    
     //console.log(body);
     var data=JSON.parse(body);
     var seats={
@@ -78,5 +72,3 @@ function seatAvailability(trainNo,src,dst,date,cls,quota,callback){
     callback(error,seats);
     });
   }
-
-  seatPrice(12839,"HWH","MAS","30-09-2017","SL","GN",23)
