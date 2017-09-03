@@ -11,7 +11,7 @@ module.exports = {
 
     var messageTwo = "Is there anything else?";
     //checking data
-    // console.log(train_number);
+    console.log(train_number);
     // console.log(train_name);
     // console.log(train_travel_time);
     // console.log(train_schedule_arrival);
