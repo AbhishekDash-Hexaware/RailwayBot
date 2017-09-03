@@ -44,13 +44,14 @@ module.exports = {
     //         train_cls[i].code_data[j]=train_cls[i].code_data[j].slice(0,1)+" "+train_cls[i].code_data[j].slice(1);
     //    }
     //  }
+    var trainlength=train_number.length;
     if((range[1]+1)>=trainlength){
         var dynamicTrainPayload = "from "+src+" to "+dest+" on "+doj;
         var flag=1;
         range[1]=trainlength;
     }
      //console.log(train_cls);
-     var trainlength=train_number.length;
+
 //till train_number.length
     for(var i=range[0];i<range[1];i++){
 
