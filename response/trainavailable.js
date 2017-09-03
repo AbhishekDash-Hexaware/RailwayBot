@@ -25,7 +25,7 @@ module.exports = {
     //checking data
     // console.log(train_number);
     // console.log(train_number.length);
-    // console.log(train_cls);
+    console.log(train_cls);
     // console.log(train_cls.length);
     // console.log(train_name);
     // console.log(train_travel_time);
