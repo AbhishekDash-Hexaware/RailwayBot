@@ -57,7 +57,7 @@ module.exports = {
       //sconsole.log("Train "+(i+1)+" pushed to JSON");
     }//end of loop
     console.log("The Dynamic Body for JSON has been Built");
-    var dynamicTrainPayload = "from "+src+" to "+dst+" on "+doj;
+    var dynamicTrainPayload = "from "+src+" to "+dest+" on "+doj;
     var facebookResponse={
                             "speech": "",
                             "displayText": "",
