@@ -67,6 +67,7 @@ let travellers_data;
     let src=request.body.result.parameters.source;
     let dest=request.body.result.parameters.destination;
     let doj=request.body.result.parameters.date;
+
     let now =new Date();
 
     let day = dateformat(request.body.result.parameters.date,"ddd").toUpperCase();

@@ -1,8 +1,6 @@
 module.exports = {
-  'TrainCarousel' : function(train_number,train_name,train_travel_time,train_schedule_arrival,train_schedule_departure,train_cls,src,dst,doj,response){
+  'TrainCarousel' : function(train_number,train_name,train_travel_time,train_schedule_arrival,train_schedule_departure,train_cls,src,dest,doj,response){
     console.log("Building Train Carousel");
-    var dynamicTrainPayload = "from "+src+" to "+dst+" on "+doj;
-    console.log(dynamicTrainPayload);
     var dynamicBody=[];
     if(train_number.length==1){
       var messageOne = "There is only "+train_number.length+" train available.";
@@ -14,6 +12,9 @@ module.exports = {
     var messageTwo = "Is there anything else?";
     //checking data
     console.log(train_number);
+    console.log(train_number.length);
+    console.log(train_cls);
+    console.log(train_cls.length);
     // console.log(train_name);
     // console.log(train_travel_time);
     // console.log(train_schedule_arrival);
@@ -33,7 +34,7 @@ module.exports = {
 
      //console.log(train_cls);
 
-    for(var i=0;i<10;i++){
+    for(var i=0;i<train_number.length;i++){
 
       var stringifiedClass = train_cls[i].code_data.join(",");
       //console.log(stringifiedClass);
@@ -56,7 +57,7 @@ module.exports = {
       //sconsole.log("Train "+(i+1)+" pushed to JSON");
     }//end of loop
     console.log("The Dynamic Body for JSON has been Built");
-
+    var dynamicTrainPayload = "from "+src+" to "+dst+" on "+doj;
     var facebookResponse={
                             "speech": "",
                             "displayText": "",
