@@ -26,16 +26,20 @@ module.exports = {
     //    cls=cls.slice(0,1)+" "+cls.slice(1);
     //  })
     // });
-     for(var i=0;i<train_cls.length;i++){
-       for(j=0;j<train_cls[i].code_data.length;j++){
-            train_cls[i].code_data[j]=train_cls[i].code_data[j].slice(0,1)+" "+train_cls[i].code_data[j].slice(1);
-       }
-     }
+
+    //  for(var i=0;i<train_cls.length;i++){
+    //    for(j=0;j<train_cls[i].code_data.length;j++){
+    //         train_cls[i].code_data[j]=train_cls[i].code_data[j].slice(0,1)+" "+train_cls[i].code_data[j].slice(1);
+    //    }
+    //  }
 
      //console.log(train_cls);
 
     for(var i=0;i<train_number.length;i++){
-
+      
+        for(j=0;j<train_cls[i].code_data.length;j++){
+             train_cls[i].code_data[j]=train_cls[i].code_data[j].slice(0,1)+" "+train_cls[i].code_data[j].slice(1);
+        }
       var stringifiedClass = train_cls[i].code_data.join(",");
       //console.log(stringifiedClass);
       var title = train_name[i];
