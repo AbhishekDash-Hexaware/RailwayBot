@@ -45,7 +45,7 @@ module.exports = {
     //    }
     //  }
     var trainlength=train_number.length;
-    if((range[1]+1)>=trainlength){
+    if((range[1])<=trainlength){
         var dynamicTrainPayload = "from "+src+" to "+dest+" on "+doj;
         var flag=1;
         range[1]=trainlength;
