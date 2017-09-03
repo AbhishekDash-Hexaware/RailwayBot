@@ -46,7 +46,7 @@ module.exports = {
     //  }
     var trainlength=train_number.length;
     // if((range[1])<=trainlength){
-    //     var dynamicTrainPayload = "from "+src+" to "+dest+" on "+doj;
+         var dynamicTrainPayload = "from "+src+" to "+dest+" on "+doj;
     //     var flag=1;
     //     range[1]=trainlength;
     // }
@@ -77,7 +77,7 @@ module.exports = {
           }
         ]
       })
-      //sconsole.log("Train "+(i+1)+" pushed to JSON");
+      //console.log("Train "+(i+1)+" pushed to JSON");
     }//end of loop
     console.log("The Dynamic Body for JSON has been Built");
   //  if(flag==1){
