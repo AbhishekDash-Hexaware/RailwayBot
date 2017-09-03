@@ -1,6 +1,18 @@
 module.exports = {
-  'TrainCarousel' : function(train_number,train_name,train_travel_time,train_schedule_arrival,train_schedule_departure,train_cls,src,dest,doj,response){
+  'TrainCarousel' : function(train_number,train_name,train_travel_time,train_schedule_arrival,train_schedule_departure,train_cls,src,dest,doj,range,response){
     console.log("Building Train Carousel");
+
+
+    if(range[0]==null){
+      console.log("Nothing Inside");
+      range[0]=0;
+      range[1]=10;
+    }
+    else {
+      console.log("Something Inside");
+    }
+    console.log("Range parameters Now : "+range);
+
     var dynamicBody=[];
     if(train_number.length==1){
       var messageOne = "There is only "+train_number.length+" train available.";
@@ -34,12 +46,13 @@ module.exports = {
     //  }
 
      //console.log(train_cls);
-
+//till train_number.length
     for(var i=0;i<train_number.length;i++){
-      
+
         for(j=0;j<train_cls[i].code_data.length;j++){
              train_cls[i].code_data[j]=train_cls[i].code_data[j].slice(0,1)+" "+train_cls[i].code_data[j].slice(1);
         }
+
       var stringifiedClass = train_cls[i].code_data.join(",");
       //console.log(stringifiedClass);
       var title = train_name[i];

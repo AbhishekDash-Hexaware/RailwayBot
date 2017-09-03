@@ -67,6 +67,7 @@ let travellers_data;
     let src=request.body.result.parameters.source;
     let dest=request.body.result.parameters.destination;
     let doj=request.body.result.parameters.date;
+    let range=request.body.result.parameters.number;
 
     let now =new Date();
 
@@ -85,7 +86,7 @@ let travellers_data;
       trainsBetween(src,dest,doj,day,function(train_number,train_name,train_travel_time,train_schedule_arrival,train_schedule_departure,train_cls,err){
         if(err==null){
           console.log("No err, moving to TrainCarousel");
-        customResponseTrainAvailable.TrainCarousel(train_number,train_name,train_travel_time,train_schedule_arrival,train_schedule_departure,train_cls,src,dest,doj,response);
+        customResponseTrainAvailable.TrainCarousel(train_number,train_name,train_travel_time,train_schedule_arrival,train_schedule_departure,train_cls,src,dest,doj,range,response);
         }else{
           console.log("Err, moving to TrainCarouselNoData");
           customResponseTrainAvailable.TrainCarouselNoData(src,dest,response);
