@@ -14,12 +14,12 @@ module.exports = {
     console.log("Range parameters Now : "+range);
 
     var dynamicBody=[];
-    if(train_number.length==1){
-      var messageOne = "There is only "+train_number.length+" train available.";
-    }
-    else{
-      var messageOne = "There are "+train_number.length+" trains available.";
-    }
+    // if(train_number.length==1){
+    //   var messageOne = "There is only "+train_number.length+" train available.";
+    // }
+    // else{
+    //   var messageOne = "There are "+train_number.length+" trains available.";
+    // }
 
     var messageTwo = "Is there anything else?";
     //checking data
@@ -46,9 +46,13 @@ module.exports = {
     //  }
 
      //console.log(train_cls);
+     var trainlength=train_number.length;
 //till train_number.length
-    for(var i=0;i<train_number.length;i++){
-
+    for(var i=range[0];i<range[1];i++){
+      if((range[1]+1)==trainlength){
+          var dynamicTrainPayload = "from "+src+" to "+dest+" on "+doj;
+          var flag=1;
+      }
         for(j=0;j<train_cls[i].code_data.length;j++){
              train_cls[i].code_data[j]=train_cls[i].code_data[j].slice(0,1)+" "+train_cls[i].code_data[j].slice(1);
         }
@@ -74,7 +78,8 @@ module.exports = {
       //sconsole.log("Train "+(i+1)+" pushed to JSON");
     }//end of loop
     console.log("The Dynamic Body for JSON has been Built");
-    var dynamicTrainPayload = "from "+src+" to "+dest+" on "+doj;
+    if(flag==1){
+      console.log("Showing Train Response for "+range[0]+" to "+range[1]);
     var facebookResponse={
                             "speech": "",
                             "displayText": "",
@@ -124,7 +129,8 @@ module.exports = {
                             },
                             "contextOut": [],
                             "source": "DuckDuckGo"
-                          }//end of custom JSON
+                          }
+                        }//end of custom JSON
     //console.log(JSON.stringify(facebookResponse));
     //console.log(JSON.stringify(facebookResponse));
 
