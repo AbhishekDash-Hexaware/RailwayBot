@@ -1,6 +1,8 @@
 module.exports = {
-  'TrainCarousel' : function(train_number,train_name,train_travel_time,train_schedule_arrival,train_schedule_departure,train_cls,response){
+  'TrainCarousel' : function(train_number,train_name,train_travel_time,train_schedule_arrival,train_schedule_departure,train_cls,src,dst,doj,response){
     console.log("Building Train Carousel");
+    var dynamicTrainPayload = "from "+src+" to "+dst+" on "+doj;
+    console.log(dynamicTrainPayload);
     var dynamicBody=[];
     if(train_number.length==1){
       var messageOne = "There is only "+train_number.length+" train available.";
@@ -31,7 +33,7 @@ module.exports = {
 
      //console.log(train_cls);
 
-    for(var i=0;i<train_number.length;i++){
+    for(var i=0;i<10;i++){
 
       var stringifiedClass = train_cls[i].code_data.join(",");
       //console.log(stringifiedClass);
@@ -74,6 +76,11 @@ module.exports = {
                                   {
                                       "text":messageTwo,
                                       "quick_replies":[
+                                      {
+                                        "content_type":"text",
+                                        "title":"More Trains",
+                                        "payload":dynamicTrainPayload
+                                      },
                                       {
                                         "content_type":"text",
                                         "title":"Find Another Train",
