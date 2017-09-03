@@ -14,12 +14,12 @@ module.exports = {
     console.log("Range parameters Now : "+range);
 
     var dynamicBody=[];
-    // if(train_number.length==1){
-    //   var messageOne = "There is only "+train_number.length+" train available.";
-    // }
-    // else{
-    //   var messageOne = "There are "+train_number.length+" trains available.";
-    // }
+    if(train_number.length==1){
+      var messageOne = "There is only "+train_number.length+" train available.";
+    }
+    else{
+      var messageOne = "There are "+train_number.length+" trains available.";
+    }
 
     var messageTwo = "Is there anything else?";
     //checking data
