@@ -24,7 +24,7 @@ console.log("Travel day :",day);
 
 
         if (error) throw new Error(error);
-        // console.log(body);
+         console.log(body);
         let train_number =[];
         let train_name = [];
         let train_travel_time=[];
