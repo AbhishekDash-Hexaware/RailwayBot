@@ -1,16 +1,16 @@
 var dateformat = require("dateformat")
-let ApiAiApp = require('actions-on-google').ApiAiApp;
-var async = require('async');
+
 var pnrStatus = require('./src/pnrstatus');
 var trainsBetween = require('./src/trainsbetween');
 var seatAvailability = require("./src/availabilty");
-var price = require("./src/price");
+var seatPrice= require("./src/price.js");
+
 var customResponsePNR = require("./response/pnr");
 var customResponseTrainAvailable = require("./response/trainavailable");
 var customResponseClass = require("./response/travel_class");
 var sendMsg = require("./response/text_Resp");
 var customResponseSeatAvailable = require("./response/seat_availability")
-var seatPrice= require("./src/price.js")
+
 
 
 
@@ -68,6 +68,9 @@ let travellers_data;
     let dest=request.body.result.parameters.destination;
     let doj=request.body.result.parameters.date;
     let now =new Date();
+
+    console.log(typeof doj,doj);
+    console.log(typeof now,now);
 
     let day = dateformat(request.body.result.parameters.date,"ddd").toUpperCase();
     doj=new Date(doj);
