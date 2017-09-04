@@ -47,12 +47,12 @@ module.exports = {
     //  }
     var trainlength=train_number.length;
 
-     if(trainlength<=range[1]){
+     if(train_number.length<=10){
          //
          var flag=1;
     //     range[1]=trainlength;
     }
-    else{
+    else if(train_number.length>10){
         trainlength=range[1];
         var flag=2;
     }
