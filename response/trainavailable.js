@@ -19,7 +19,7 @@ module.exports = {
       var messageOne = "There is only "+train_number.length+" train available.";
     }
     else{
-      var messageOne = "There are "+train_number.length+" trains available.";
+      var messageOne = "There are "+train_number.length+" trains available. I'll show you few at a time. Click More Trains to see the rest of them."; 
     }
 
     var messageTwo = "Is there anything else?";
@@ -55,7 +55,8 @@ module.exports = {
     else if(trainlength>10){
       console.log("Greater than 10")
       if(trainlength==range[1]){
-        var flag=2;
+        var flag=3;
+        console.log("Final Flag");
         trainlength=range[1];
       }
       else{
@@ -229,8 +230,56 @@ console.log("Range parameters Going In : "+range);
                                "contextOut": [],
                                "source": "DuckDuckGo"
                              }
-                             console.log("Facebook : : "+JSON.stringify(facebookResponse));
+                             //console.log("Facebook : : "+JSON.stringify(facebookResponse));
                            }//end of custom JSON
+       else if(flag==3){
+        console.log("Showing Train Response for Normal Range less than 10");
+        var facebookResponse={
+                                "speech": "",
+                                "displayText": "",
+                                "data": {
+                                  "facebook": [{
+                                    "text":messageOne
+                                  },
+                                  {
+                                      "attachment": {
+                                        "type": "template",
+                                        "payload": {
+                                          "template_type": "generic",
+                                          "elements": dynamicBody
+                                         }
+                                        }
+                                      },
+                                      {
+                                          "text":messageTwo,
+                                          "quick_replies":[
+                                          {
+                                            "content_type":"text",
+                                            "title":"Find Another Train",
+                                            "payload":"find_train"
+                                          },
+                                          {
+                                            "content_type":"text",
+                                            "title":"Check PNR Status",
+                                            "payload":"pnr_status"
+                                          },
+                                          {
+                                            "content_type":"text",
+                                            "title":"Another Question",
+                                            "payload":"another_query"
+                                          },
+                                          {
+                                            "content_type":"text",
+                                            "title":"That's all",
+                                            "payload":"thanks"
+                                          }
+                                        ]
+                                      }]
+                                },
+                                "contextOut": [],
+                                "source": "DuckDuckGo"
+                              }
+                            }
 
 
     response.send(facebookResponse);
