@@ -59,12 +59,12 @@ module.exports = {
         var flag=2;
     }
 
-    if(range[1]==trainlength){
-      console.log("range[1]==trainlength");
-      range[0]=0;
-      range[1]=10;
-      var flag=2;
-    }
+    // if(range[1]==trainlength){
+    //   console.log("range[1]==trainlength");
+    //   range[0]=0;
+    //   range[1]=10;
+    //   var flag=2;
+    // }
     //  //console.log(train_cls);
 console.log("Range parameters Going In : "+range);
 //till train_number.length
