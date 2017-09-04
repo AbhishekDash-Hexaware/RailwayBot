@@ -58,6 +58,10 @@ module.exports = {
         console.log("Loop counter now : "+trainlength);
         var flag=2;
     }
+    else if(trainlength==range[1]){
+      var flag=2;
+      trainlength=range[1];
+    }
 
     // if(range[1]==trainlength){
     //   console.log("range[1]==trainlength");
