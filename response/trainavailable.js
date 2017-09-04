@@ -25,7 +25,7 @@ module.exports = {
     //checking data
     // console.log(train_number);
     // console.log(train_number.length);
-    console.log(train_cls);
+    //console.log(train_cls);
     // console.log(train_cls.length);
     // console.log(train_name);
     // console.log(train_travel_time);
@@ -45,11 +45,11 @@ module.exports = {
     //    }
     //  }
     var trainlength=train_number.length;
-    // if((range[1])<=trainlength){
-         var dynamicTrainPayload = "from "+src+" to "+dest+" on "+doj;
-    //     var flag=1;
+     if((trainlength<=range[1]){
+         //var dynamicTrainPayload = "from "+src+" to "+dest+" on "+doj;
+         var flag=1;
     //     range[1]=trainlength;
-    // }
+    }
     //  //console.log(train_cls);
 
 //till train_number.length
@@ -80,7 +80,7 @@ module.exports = {
       //console.log("Train "+(i+1)+" pushed to JSON");
     }//end of loop
     console.log("The Dynamic Body for JSON has been Built");
-  //  if(flag==1){
+   if(flag==1){
       console.log("Showing Train Response for "+range[0]+" to "+range[1]);
     var facebookResponse={
                             "speech": "",
@@ -101,11 +101,6 @@ module.exports = {
                                   {
                                       "text":messageTwo,
                                       "quick_replies":[
-                                      {
-                                        "content_type":"text",
-                                        "title":"More Trains",
-                                        "payload":dynamicTrainPayload
-                                      },
                                       {
                                         "content_type":"text",
                                         "title":"Find Another Train",
@@ -132,7 +127,7 @@ module.exports = {
                             "contextOut": [],
                             "source": "DuckDuckGo"
                           }
-                        //}//end of custom JSON
+                        }//end of custom JSON
     //console.log(JSON.stringify(facebookResponse));
     //console.log(JSON.stringify(facebookResponse));
 
