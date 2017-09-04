@@ -150,13 +150,13 @@ console.log("Range parameters Going In : "+range);
 
           if(range[0]==(trainlength-remainder)){
             console.log("Range[0]==(trainlength-remainder)");
-            range[1]=range[0]+remainder;
+            range[1]=range[1]+remainder;
             console.log("Setting Range[1]="+range[1]);
 
           }
           else if(range[0]<=(trainlength-remainder)){
             console.log("Range[0]<=(trainlength-remainder)");
-            range[1]=range[0]+10;
+            range[1]=range[1]+10;
               console.log("Setting Range[1]="+range[1]);
           }
 
