@@ -36,7 +36,7 @@ function priceInfo(trainNo,src,dst,date,cls,quota,age,callback){
     var cost
     var data=JSON.parse(body);
     console.log(data);
-    if(data.length==0){
+    if(data.fare.length==0 || data.response_code!=200){
       cost={
         "price":"UNAVAILABLE"
       }
