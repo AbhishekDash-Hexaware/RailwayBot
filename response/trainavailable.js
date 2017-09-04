@@ -148,6 +148,7 @@ console.log("Range parameters Going In : "+range);
 
           if(range[0]==(trainlength-remainder)){
             range[1]=range[0]+remainder;
+
           }
           else if(range[0]<=(trainlength-remainder)){
             range[1]=range[0]+10;
@@ -157,7 +158,7 @@ console.log("Range parameters Going In : "+range);
         // range[0]=range[0]+10;
         // range[1]=range[1]+10;
        var dynamicTrainPayload = "from "+src+" to "+dest+" on "+doj+" start "+range[0]+" stop "+range[1];
-
+       console.log(dynamicTrainPayload);
        var facebookResponse={
                                "speech": "",
                                "displayText": "",
