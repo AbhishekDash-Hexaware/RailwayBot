@@ -47,17 +47,20 @@ module.exports = {
     //  }
     var trainlength=train_number.length;
 
-     if(train_number.length<=10){
-         //
+     if(trainlength<=10){
+         console.log("Normal less than or equals 10 flag set as 1");
          var flag=1;
     //     range[1]=trainlength;
     }
-    else if(train_number.length>10){
+    else if(trainlength>10){
+      console.log("Greater than 10")
         trainlength=range[1];
+        console.log("Loop counter now : "+trainlength);
         var flag=2;
     }
 
     if(range[1]==trainlength){
+      console.log("range[1]==trainlength");
       range[0]=0;
       range[1]=10;
       var flag=2;
@@ -94,7 +97,7 @@ console.log("Range parameters Going In : "+range);
 
     console.log("The Dynamic Body for JSON has been Built");
    if(flag==1){
-    console.log("Showing Train Response for "+range[0]+" to "+range[1]);
+    console.log("Showing Train Response for Normal Range less than 10");
     var facebookResponse={
                             "speech": "",
                             "displayText": "",
