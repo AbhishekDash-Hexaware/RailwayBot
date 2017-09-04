@@ -35,16 +35,22 @@ function priceInfo(trainNo,src,dst,date,cls,quota,age,callback){
     request(options, function (error, response, body) {
     var cost
     var data=JSON.parse(body);
-    console.log(data);  
-    data.fare.forEach(function(element){
-      if(element.code==cls){
-        console.log("Fare for "+cls+" Rs."+element.fare);
-        price_value=element.fare;   
-        cost={
-          "price":price_value
-        }
-      }  
-    })
+    console.log(data);
+    if(data.length==0){
+      cost={
+        "price":"UNAVAILABLE"
+      }
+    }else{  
+      data.fare.forEach(function(element){
+        if(element.code==cls){
+          console.log("Fare for "+cls+" Rs."+element.fare);
+          price_value=element.fare;   
+          cost={
+            "price":price_value
+          }
+        }  
+      })
+    }
     callback(error,cost);  
   });
 }
