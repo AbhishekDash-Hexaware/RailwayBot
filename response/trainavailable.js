@@ -9,7 +9,8 @@ module.exports = {
       range[1]=10;
     }
     else {
-      console.log("Something Inside");
+      console.log("Something Inside : "+range);
+
     }
     console.log("Range parameters Now : "+range);
 //
@@ -46,14 +47,24 @@ module.exports = {
     //  }
     var trainlength=train_number.length;
      if(trainlength<=range[1]){
-         //var dynamicTrainPayload = "from "+src+" to "+dest+" on "+doj;
+         //
          var flag=1;
     //     range[1]=trainlength;
     }
-    //  //console.log(train_cls);
+    else{
+        trainlength=range[1];
+        var flag=2;
+    }
 
+    if(range[1]==trainlength){
+      range[0]=0;
+      range[1]=10;
+      var flag=2;
+    }
+    //  //console.log(train_cls);
+console.log("Range parameters Going In : "+range);
 //till train_number.length
-    for(var i=0;i<trainlength;i++){
+    for(var i=range[0];i<trainlength;i++){
 
         for(j=0;j<train_cls[i].code_data.length;j++){
              train_cls[i].code_data[j]=train_cls[i].code_data[j].slice(0,1)+" "+train_cls[i].code_data[j].slice(1);
@@ -79,9 +90,10 @@ module.exports = {
       })
       //console.log("Train "+(i+1)+" pushed to JSON");
     }//end of loop
+
     console.log("The Dynamic Body for JSON has been Built");
    if(flag==1){
-      console.log("Showing Train Response for "+range[0]+" to "+range[1]);
+    console.log("Showing Train Response for "+range[0]+" to "+range[1]);
     var facebookResponse={
                             "speech": "",
                             "displayText": "",
@@ -128,8 +140,75 @@ module.exports = {
                             "source": "DuckDuckGo"
                           }
                         }//end of custom JSON
-    //console.log(JSON.stringify(facebookResponse));
-    //console.log(JSON.stringify(facebookResponse));
+        console.log("Will Build Train Response for "+range[0]+" to "+range[1]);
+        else if(flag==2){
+          range[0]=range[1];//20
+          var remainder=trainlength%10;//Remainder 7
+
+          if(range[0]==(trainlength-remainder)){
+            range[1]=range[0]+remainder;
+          }
+          else if(range[0]<=(trainlength-remainder)){
+            range[1]=range[0]+10;
+          }
+
+        //range[1]=trainlength-(trainlength%range[1]);
+        // range[0]=range[0]+10;
+        // range[1]=range[1]+10;
+       var dynamicTrainPayload = "from "+src+" to "+dest+" on "+doj+" start "+range[0]+" stop "+range[1];
+
+       var facebookResponse={
+                               "speech": "",
+                               "displayText": "",
+                               "data": {
+                                 "facebook": [{
+                                   "text":messageOne
+                                 },
+                                 {
+                                     "attachment": {
+                                       "type": "template",
+                                       "payload": {
+                                         "template_type": "generic",
+                                         "elements": dynamicBody
+                                        }
+                                       }
+                                     },
+                                     {
+                                         "text":messageTwo,
+                                         "quick_replies":[
+                                           {
+                                             "content_type":"text",
+                                             "title":"More Trains",
+                                             "payload":dynamicTrainPayload
+                                           },
+                                         {
+                                           "content_type":"text",
+                                           "title":"Find Another Train",
+                                           "payload":"find_train"
+                                         },
+                                         {
+                                           "content_type":"text",
+                                           "title":"Check PNR Status",
+                                           "payload":"pnr_status"
+                                         },
+                                         {
+                                           "content_type":"text",
+                                           "title":"Another Question",
+                                           "payload":"another_query"
+                                         },
+                                         {
+                                           "content_type":"text",
+                                           "title":"That's all",
+                                           "payload":"thanks"
+                                         }
+                                       ]
+                                     }]
+                               },
+                               "contextOut": [],
+                               "source": "DuckDuckGo"
+                             }
+                           }//end of custom JSON
+
 
     response.send(facebookResponse);
 
