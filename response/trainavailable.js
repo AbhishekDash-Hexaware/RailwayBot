@@ -148,6 +148,7 @@ console.log("Range parameters Going In : "+range);
 
         else if(flag==2){
           console.log("Will Build Train Response for "+range[0]+" to "+range[1]);
+          var temp=range[0];
           range[0]=range[1];//20
             console.log("Range[0]="+range[0]);
           var remainder=train_number.length%10;//Remainder 7
@@ -155,6 +156,7 @@ console.log("Range parameters Going In : "+range);
 
           if(range[0]==(train_number.length-remainder)){
             console.log("Range[0]==(trainlength-remainder)");
+            range[0]=temp;
             range[1]=range[0]+remainder;
             console.log("Setting Range[1]="+range[1]);
 
