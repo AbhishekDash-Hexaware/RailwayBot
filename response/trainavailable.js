@@ -219,7 +219,7 @@ console.log("Range parameters Going In : "+range);
                                "contextOut": [],
                                "source": "DuckDuckGo"
                              }
-                             console.log("Facebook : : "+facebookResponse);
+                             console.log("Facebook : : "+JSON.stringify(facebookResponse));
                            }//end of custom JSON
 
 
