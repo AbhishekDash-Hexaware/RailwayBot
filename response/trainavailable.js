@@ -144,14 +144,20 @@ console.log("Range parameters Going In : "+range);
         else if(flag==2){
           console.log("Will Build Train Response for "+range[0]+" to "+range[1]);
           range[0]=range[1];//20
+            console.log("Range[0]="+range[0]);
           var remainder=trainlength%10;//Remainder 7
+            console.log("Remainder="+remainder);
 
           if(range[0]==(trainlength-remainder)){
+            console.log("Range[0]==(trainlength-remainder)");
             range[1]=range[0]+remainder;
+            console.log("Setting Range[1]="+range[1]);
 
           }
           else if(range[0]<=(trainlength-remainder)){
+            console.log("Range[0]<=(trainlength-remainder)");
             range[1]=range[0]+10;
+              console.log("Setting Range[1]="+range[1]);
           }
 
         //range[1]=trainlength-(trainlength%range[1]);
