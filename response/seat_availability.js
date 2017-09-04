@@ -10,7 +10,7 @@ module.exports={
       var flag=1;
     }
 
-    var messageOne="Here are the available seats in the "+train_name+" for the next 5 days.";
+    var messageOne="Here are the available seats in the "+train_name+" for the next 5 days it runs.";
     //console.log("forming");
     let dynamicBody=[];
 
