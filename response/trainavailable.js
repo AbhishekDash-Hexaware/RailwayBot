@@ -54,7 +54,7 @@ module.exports = {
     }
     else if(trainlength>10){
       console.log("Greater than 10")
-        trainlength=range[1];
+        trainlength=range[1]-range[0];
         console.log("Loop counter now : "+trainlength);
         var flag=2;
     }
