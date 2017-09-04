@@ -149,13 +149,13 @@ console.log("Range parameters Going In : "+range);
           var remainder=train_number.length%10;//Remainder 7
             console.log("Remainder="+remainder);
 
-          if(range[0]==(trainlength-remainder)){
+          if(range[0]==(train_number.length-remainder)){
             console.log("Range[0]==(trainlength-remainder)");
             range[1]=range[0]+remainder;
             console.log("Setting Range[1]="+range[1]);
 
           }
-          else if(range[0]<=(trainlength-remainder)){
+          else if(range[0]<=(train_number.length-remainder)){
             console.log("Range[0]<=(trainlength-remainder)");
             range[1]=range[0]+10;
               console.log("Setting Range[1]="+range[1]);
