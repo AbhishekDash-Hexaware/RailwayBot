@@ -140,8 +140,9 @@ console.log("Range parameters Going In : "+range);
                             "source": "DuckDuckGo"
                           }
                         }//end of custom JSON
-        console.log("Will Build Train Response for "+range[0]+" to "+range[1]);
+
         else if(flag==2){
+          console.log("Will Build Train Response for "+range[0]+" to "+range[1]);
           range[0]=range[1];//20
           var remainder=trainlength%10;//Remainder 7
 
