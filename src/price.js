@@ -70,11 +70,23 @@ function seatAvailability(trainNo,src,dst,date,cls,quota,callback){
     request(options, function (error, response, body){    
     //console.log(body);
     var data=JSON.parse(body);
-    var seats={
-      "availability":data.availability,
-      "cls":data.class.name,
-      "quota":data.quota.quota_name,
-      "train_name":data.train_name
+    if(data.train_name ==null || data.train_number== null || data.response_code !=200){
+
+        var seats={
+        "availability":"UNAVAILABLE",
+        "cls":"UNAVAILABLE",
+        "quota":"UNAVAILABLE",
+        "train_name":"UNAVAILABLE"
+      }
+      
+    }else{
+
+      var seats={
+        "availability":data.availability,
+        "cls":data.class.name,
+        "quota":data.quota.quota_name,
+        "train_name":data.train_name
+      }
     }
     callback(error,seats);
     });
