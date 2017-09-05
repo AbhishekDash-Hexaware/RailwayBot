@@ -1,6 +1,6 @@
 module.exports={
   'seatCarousel':function(multidata,reqcontext,response) {
-    console.log("Inside : "+reqcontext);
+    console.log("Inside : "+reqcontext,typeof reqcontext);
     var data=multidata[0].availability;
     var train_name=multidata[0].train_name;
     var class_name=multidata[0].cls;
