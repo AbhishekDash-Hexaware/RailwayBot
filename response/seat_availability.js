@@ -44,19 +44,7 @@ module.exports={
     }
 
   if(flag==1){
-    var messageOne="It seems the seats available for this train is unavailable at the moment. Try for this train later or go ahead for another train."
-      var facebookResponse={
-
-          "speech": "",
-          "displayText": "",
-          "data": {
-            "facebook": [{
-              "text":messageOne
-            },
-              {
-                  "text":"Is there anything else?",
-                  "quick_replies":[
-                  {
+     dynamicQuickReplies.push({
                     "content_type":"text",
                     "title":"Find Another Train",
                     "payload":"find_train"
@@ -75,8 +63,19 @@ module.exports={
                     "content_type":"text",
                     "title":"That's all",
                     "payload":"thanks"
-                  }
-                ]
+                  })
+    var messageOne="It seems the seats for this class is unavailable at the moment. Try for this train later or go ahead for another train."
+      var facebookResponse={
+
+          "speech": "",
+          "displayText": "",
+          "data": {
+            "facebook": [{
+              "text":messageOne
+            },
+              {
+                  "text":"Is there anything else?",
+                  "quick_replies":dynamicQuickReplies
               }]
             },
           "contextOut": [],
