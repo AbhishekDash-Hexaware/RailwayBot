@@ -338,7 +338,7 @@ console.log("Range parameters Going In : "+range);
   'pastDate':function(response){
     console.log("Building Train Carousel No Data");
     var messageOne="Trains travel to your destination, not to the past. :P";
-    var messageTwo="Seems like you have ginem me a past date";
+    var messageTwo="Seems like you have givem me a past date";
     var facebookResponse = {
                             "speech": "",
                             "displayText": "",
