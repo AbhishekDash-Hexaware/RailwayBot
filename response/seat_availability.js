@@ -24,7 +24,7 @@ module.exports={
       } 
     });
 
-    console.log("Dynamic Quick Replies for "+displaycls);
+    console.log("Dynamic Quick Replies built");
     if(train_name =="UNAVAILABLE"){
       var flag=1;
     }
@@ -104,7 +104,7 @@ module.exports={
                     "title":"That's all",
                     "payload":"thanks"
                   })
-                  
+
   var facebookResponse={
 
           "speech": "",
