@@ -8,10 +8,19 @@ module.exports={
     var quota_name=multidata[0].quota;
     var price=multidata[1].price;
 
-    let displaycls=[];
+   // let displaycls=[];
+    var dynamicQuickReplies=[];
+
     reqcontext.forEach(function(element) {
       if(element != class_code){
-        displaycls.push(element);
+
+        let quick_title="Check "+element;
+        let quick_payload="class "+element;
+        dynamicQuickReplies.push({
+          "content_type":"text",
+          "title": quick_title,
+          "payload": quick_payload
+        });
       } 
     });
 
@@ -75,26 +84,7 @@ module.exports={
           }
   }
   else{
-  var facebookResponse={
-
-          "speech": "",
-          "displayText": "",
-          "data": {
-            "facebook": [{
-              "text":messageOne
-            },{
-              "attachment": {
-                "type": "template",
-                "payload": {
-                  "template_type": "generic",
-                  "elements": dynamicBody
-                  }
-                }
-              },
-              {
-                  "text":"Is there anything else?",
-                  "quick_replies":[
-                  {
+    dynamicQuickReplies.push({
                     "content_type":"text",
                     "title":"Find Another Train",
                     "payload":"find_train"
@@ -113,8 +103,27 @@ module.exports={
                     "content_type":"text",
                     "title":"That's all",
                     "payload":"thanks"
+                  })
+                  
+  var facebookResponse={
+
+          "speech": "",
+          "displayText": "",
+          "data": {
+            "facebook": [{
+              "text":messageOne
+            },{
+              "attachment": {
+                "type": "template",
+                "payload": {
+                  "template_type": "generic",
+                  "elements": dynamicBody
                   }
-                ]
+                }
+              },
+              {
+                  "text":"Is there anything else?",
+                  "quick_replies":dynamicQuickReplies
               }]
             },
           "contextOut": [],
