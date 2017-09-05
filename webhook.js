@@ -1,6 +1,4 @@
 var dateformat = require("dateformat")
-let ApiAiApp = require('actions-on-google').ApiAiApp;
-var async = require('async');
 var pnrStatus = require('./src/pnrstatus');
 var trainsBetween = require('./src/trainsbetween');
 var seatAvailability = require("./src/availabilty");
@@ -69,7 +67,7 @@ let travellers_data;
     let doj=request.body.result.parameters.date;
     let range=request.body.result.parameters.number;
 
-    let now =new Date();
+    let now =new Date(dateformat(new Date(),"yyyy-mm-dd"));
 
     let day = dateformat(request.body.result.parameters.date,"ddd").toUpperCase();
     doj=new Date(doj);
