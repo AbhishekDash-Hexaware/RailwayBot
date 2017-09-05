@@ -125,14 +125,8 @@ let travellers_data;
       let cls=request.body.result.parameters.cls;
       let quota=request.body.result.parameters.quota;
       let age=request.body.result.parameters.age.amount;
-      let reqcontext;
+      let reqcontext=request.body.result.parameters.reqcontext;
       
-      request.body.result.contexts.forEach(function(element) {
-        if(element.name=="quick"){
-        console.log("CONTEXT",element.parameters.cls);
-        reqcontext=element.parameters.cls;
-        }  
-      });
       date=dateformat(date,"dd-mm-yyyy");
       console.log("Reformated Date : "+date);
       //console.log("Train No. "+trainNo+" has the following classes : "+cls.join(","));
