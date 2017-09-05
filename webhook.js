@@ -78,7 +78,7 @@ let travellers_data;
 
 
     if(doj<now) {
-      sendMsg(response,"I see! you want to travel in the past, but trains cant help you :P");
+      customResponseTrainAvailable.pastDate(response);      
     }else{
       doj =dateformat(doj,"dd-mm-yyyy");
       trainsBetween(src,dest,doj,day,function(train_number,train_name,train_travel_time,train_schedule_arrival,train_schedule_departure,train_cls,err){

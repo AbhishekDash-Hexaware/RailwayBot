@@ -14,8 +14,8 @@ module.exports={
     reqcontext.forEach(function(element) {
       if(element != class_code){
 
-        let quick_title="Check "+element;
-        let quick_payload="class "+element;
+        let quick_title="Check "+element+" Seats";
+        let quick_payload="class "+element; 
         dynamicQuickReplies.push({
           "content_type":"text",
           "title": quick_title,

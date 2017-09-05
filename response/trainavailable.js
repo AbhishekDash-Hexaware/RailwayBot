@@ -334,5 +334,50 @@ console.log("Range parameters Going In : "+range);
                           };
 
     response.send(facebookResponse);
+  },
+  'pastDate':function(response){
+    console.log("Building Train Carousel No Data");
+    var messageOne="Trains travel to your destination, not to the past. :P";
+    var messageTwo="Seems like you have ginem me a past date";
+    var facebookResponse = {
+                            "speech": "",
+                            "displayText": "",
+                            "data": {
+                              "facebook": [{
+                                "text":messageOne
+                              },{
+                                "text":messageTwo
+                              },
+                              {
+                                      "text":"Is there anything else?",
+                                      "quick_replies":[
+                                      {
+                                        "content_type":"text",
+                                        "title":"Try Again",
+                                        "payload":"find_train"
+                                      },
+                                      {
+                                        "content_type":"text",
+                                        "title":"Check PNR Status",
+                                        "payload":"pnr_status"
+                                      },
+                                      {
+                                        "content_type":"text",
+                                        "title":"Another Question",
+                                        "payload":"another_query"
+                                      },
+                                      {
+                                        "content_type":"text",
+                                        "title":"That's all",
+                                        "payload":"thanks"
+                                      }
+                                    ]
+                                  }]
+                            },
+                            "contextOut": [],
+                            "source": "DuckDuckGo"
+                          };
+
+    response.send(facebookResponse);
   }
 }
