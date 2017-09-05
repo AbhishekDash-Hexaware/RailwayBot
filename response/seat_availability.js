@@ -7,6 +7,7 @@ module.exports={
     var class_code=multidata[0].code;
     var quota_name=multidata[0].quota;
     var price=multidata[1].price;
+    console.log("Printing class_code",class_code,multidata.code)
 
    // let displaycls=[];
     var dynamicQuickReplies=[];
