@@ -1,11 +1,21 @@
 module.exports={
-  'seatCarousel':function(multidata,response) {
+  'seatCarousel':function(multidata,reqcontext,response) {
+    console.log("Inside : "+reqcontext);
     var data=multidata[0].availability;
     var train_name=multidata[0].train_name;
     var class_name=multidata[0].cls;
+    var class_code=multidata[0].code;
     var quota_name=multidata[0].quota;
     var price=multidata[1].price;
 
+    let displaycls=[];
+    reqcontext.forEach(function(element) {
+      if(element != class_code){
+        displaycls.push(element);
+      } 
+    });
+
+    console.log("Dynamic Quick Replies for "+displaycls);
     if(train_name =="UNAVAILABLE"){
       var flag=1;
     }

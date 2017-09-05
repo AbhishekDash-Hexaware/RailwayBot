@@ -84,6 +84,7 @@ function seatAvailability(trainNo,src,dst,date,cls,quota,callback){
       var seats={
         "availability":data.availability,
         "cls":data.class.name,
+        "code":data.class.code,
         "quota":data.quota.quota_name,
         "train_name":data.train_name
       }
