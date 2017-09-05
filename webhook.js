@@ -124,11 +124,9 @@ let travellers_data;
       let cls=request.body.result.parameters.cls;
       let quota=request.body.result.parameters.quota;
       let age=request.body.result.parameters.age.amount;
-      let contexts=request.body.contexts;
       let reqcontext;
-      console.log(request.body.contexts);
-
-      contexts.forEach(function(element) {
+      
+      request.body.result.contexts.forEach(function(element) {
         if(element.name=="quick"){
         console.log("CONTEXT",element.parameters.cls);
         reqcontext=element.parameters.cls;
