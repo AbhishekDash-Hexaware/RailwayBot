@@ -13,7 +13,8 @@ module.exports={
 
     reqcontext.forEach(function(element) {
       if(element != class_code){
-
+        console.log(typeof element ,typeof class_code);
+        console.log(element,"is not equal to",class_code);
         let quick_title="Check "+element+" Seats";
         let quick_payload="class "+element; 
         dynamicQuickReplies.push({

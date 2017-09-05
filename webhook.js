@@ -125,8 +125,7 @@ let travellers_data;
       let cls=request.body.result.parameters.cls;
       let quota=request.body.result.parameters.quota;
       let age=request.body.result.parameters.age.amount;
-      let reqcontext=[]
-      reqcontext=request.body.result.parameters.reqcontext;
+      let reqcontext=request.body.result.parameters.reqcontext;
       
       date=dateformat(date,"dd-mm-yyyy");
       console.log("Reformated Date : "+date);
