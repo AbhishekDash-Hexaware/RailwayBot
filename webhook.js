@@ -116,8 +116,8 @@ let travellers_data;
 
   function seatHandler(request,response){
 
-    console.log(JSON.stringify(request.body.result.parameters));
-    console.log(JSON.stringify(request.body.result.contexts));
+    // console.log(JSON.stringify(request.body.result.parameters));
+    // console.log(JSON.stringify(request.body.result.contexts));
       let trainNo=request.body.result.parameters.trainNumber;
       let src=request.body.result.parameters.source;
       let dst=request.body.result.parameters.destination;
