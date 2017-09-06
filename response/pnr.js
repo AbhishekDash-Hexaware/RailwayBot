@@ -174,7 +174,7 @@ module.exports={
       //console.log(request.body);
 
       //var messageTwo="The chart for this "+chart_prepared+" View more specific details below.";
-      var messageOne="The PNR number you gave has expired or it's not a valid one.";
+      var messageOne="The PNR number you gave has expired or it's not a valid one. If this issue persists, try after some time :) ";
       //var trainDetailsSubtitle="Train Name:"+train_name+"\nTrain Number:"+train_number+"\nCoach Class:"+journey_class;
       var facebookResponse={
                               "speech": "",
