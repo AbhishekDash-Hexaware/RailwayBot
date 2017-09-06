@@ -230,7 +230,7 @@ console.log("Range parameters Going In : "+range);
                                "contextOut": [],
                                "source": "DuckDuckGo"
                              }
-                             //console.log("Facebook : : "+JSON.stringify(facebookResponse));
+                             console.log("Facebook : : "+JSON.stringify(facebookResponse));
                            }//end of custom JSON
        else if(flag==3){
         console.log("Showing Train Response for Normal Range less than 10");
