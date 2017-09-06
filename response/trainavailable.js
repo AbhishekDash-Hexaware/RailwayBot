@@ -50,7 +50,7 @@ module.exports = {
      if(trainlength<=10){
          console.log("Normal less than or equals 10 flag set as 1");
          var flag=1;
-    //     range[1]=trainlength;
+         range[1]=trainlength;
     }
     else if(trainlength>10){
       console.log("Greater than 10")
@@ -60,8 +60,8 @@ module.exports = {
         trainlength=range[1];
       }
       else{
-        trainlength=range[1]-range[0];
-        console.log("Loop counter now : "+trainlength);
+        //trainlength=range[1]-range[0];
+        console.log("Loop counter now : "+range[1]);
         var flag=2;
       }
     }
@@ -78,7 +78,7 @@ console.log("Range parameters Going In : "+range);
 //till train_number.length
 console.log("Loop Init : "+range[0]);
 console.log("Loop End : "+trainlength);
-    for(var i=range[0];i<trainlength;i++){
+    for(var i=range[0];i<range[1];i++){
 
         for(j=0;j<train_cls[i].code_data.length;j++){
              train_cls[i].code_data[j]=train_cls[i].code_data[j].slice(0,1)+" "+train_cls[i].code_data[j].slice(1);
