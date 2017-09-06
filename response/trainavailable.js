@@ -90,8 +90,8 @@ console.log("Loop End : "+trainlength);
       var train_payload = train_number[i]+" seat "+stringifiedClass;
       //console.log("Quick Reply Payload Set as : "+train_payload);
       var trainDetailsSubtitle = "Train no: "+train_number[i]+" Travel Time: "+train_travel_time[i]+" Hrs\nDeparture: "+train_schedule_departure[i]+" Hrs\nArrival: "+train_schedule_arrival[i]+" Hrs";
-      console.log("Printing Indexed element "+i);
-      console.log("Train Number :"+train_number[i]);
+      // console.log("Printing Indexed element "+i);
+      // console.log("Train Number :"+train_number[i]);
       dynamicBody.push({
         "title": title,
         "subtitle": trainDetailsSubtitle,
@@ -106,9 +106,9 @@ console.log("Loop End : "+trainlength);
       //console.log("Train "+(i+1)+" pushed to JSON");
     }//end of loop
 
-    console.log("The Dynamic Body for JSON has been Built");
+    // console.log("The Dynamic Body for JSON has been Built");
    if(flag==1){
-    console.log("Showing Train Response for Normal Range less than 10");
+    // console.log("Showing Train Response for Normal Range less than 10");
     var facebookResponse={
                             "speech": "",
                             "displayText": "",
@@ -157,31 +157,31 @@ console.log("Loop End : "+trainlength);
                         }//end of custom JSON
 
         else if(flag==2){
-          console.log("Will Build Train Response for "+range[0]+" to "+range[1]);
+          // console.log("Will Build Train Response for "+range[0]+" to "+range[1]);
           //var temp=range[0];
           range[0]=range[1];//20
-            console.log("Range[0]="+range[0]);
+            // console.log("Range[0]="+range[0]);
           var remainder=train_number.length%10;//Remainder 7
-            console.log("Remainder="+remainder);
+            // console.log("Remainder="+remainder);
 
           if(range[0]==(train_number.length-remainder)){
             console.log("Range[0]==(trainlength-remainder)");
             //range[0]=temp;
             range[1]=range[0]+remainder;
-            console.log("Setting Range[1]="+range[1]);
+            // console.log("Setting Range[1]="+range[1]);
 
           }
           else if(range[0]<=(train_number.length-remainder)){
-            console.log("Range[0]<=(trainlength-remainder)");
+            // console.log("Range[0]<=(trainlength-remainder)");
             range[1]=range[0]+10;
-              console.log("Setting Range[1]="+range[1]);
+              // console.log("Setting Range[1]="+range[1]);
           }
 
         //range[1]=trainlength-(trainlength%range[1]);
         // range[0]=range[0]+10;
         // range[1]=range[1]+10;
        var dynamicTrainPayload = "from "+src+" to "+dest+" on "+doj+" start "+range[0]+" stop "+range[1];
-       console.log(dynamicTrainPayload);
+      //  console.log(dynamicTrainPayload);
        var facebookResponse={
                                "speech": "",
                                "displayText": "",
@@ -232,7 +232,7 @@ console.log("Loop End : "+trainlength);
                                "contextOut": [],
                                "source": "DuckDuckGo"
                              }
-                             console.log("Facebook : : "+JSON.stringify(facebookResponse));
+                            //  console.log("Facebook : : "+JSON.stringify(facebookResponse));
                            }//end of custom JSON
        else if(flag==3){
         console.log("Showing Train Response for Normal Range less than 10");

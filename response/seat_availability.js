@@ -7,15 +7,15 @@ module.exports={
     var class_code=multidata[0].code;
     var quota_name=multidata[0].quota;
     var price=multidata[1].price;
-    console.log("Printing class_code",class_code,multidata.code)
+    // console.log("Printing class_code",class_code,multidata[0].code)
 
    // let displaycls=[];
     var dynamicQuickReplies=[];
 
     reqcontext.forEach(function(element) {
       if(element != class_code){
-        console.log(typeof element ,typeof class_code);
-        console.log(element,"is not equal to",class_code);
+        // console.log(typeof element ,typeof class_code);
+        // console.log(element,"is not equal to",class_code);
         let quick_title="Check "+element+" Seats";
         let quick_payload="class "+element; 
         dynamicQuickReplies.push({
