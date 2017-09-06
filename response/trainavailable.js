@@ -76,6 +76,8 @@ module.exports = {
     //  //console.log(train_cls);
 console.log("Range parameters Going In : "+range);
 //till train_number.length
+console.log("Loop Init : "+range[0]);
+console.log("Loop End : "+trainlength);
     for(var i=range[0];i<trainlength;i++){
 
         for(j=0;j<train_cls[i].code_data.length;j++){
