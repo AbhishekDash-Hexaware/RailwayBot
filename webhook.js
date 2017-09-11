@@ -11,7 +11,6 @@ var customResponseSeatAvailable = require("./response/seat_availability")
 var seatPrice= require("./src/price.js")
 
 
-
 module.exports=function webhook(request,response){
 
 let travellers_data;
