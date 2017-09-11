@@ -1,6 +1,6 @@
 module.exports = {
   'ClassQuick' : function(train_cls,response){
-    console.log("Building Train Seat Quick Replies");
+    //console.log("Building Train Seat Quick Replies");
     var dynamicBody=[];
 
     var messageOne = "Please choose the seating class.";

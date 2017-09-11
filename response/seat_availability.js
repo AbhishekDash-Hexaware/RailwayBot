@@ -1,6 +1,6 @@
 module.exports={
   'seatCarousel':function(multidata,reqcontext,response) {
-    console.log("Inside : "+reqcontext,typeof reqcontext);
+    //console.log("Inside : "+reqcontext,typeof reqcontext);
     var data=multidata[0].availability;
     var train_name=multidata[0].train_name;
     var class_name=multidata[0].cls;
@@ -8,7 +8,7 @@ module.exports={
     var quota_name=multidata[0].quota;
     var price=multidata[1].price;
     // console.log("Printing class_code",class_code,multidata[0].code)
-
+    console.log(JSON.stringify(multidata));
    // let displaycls=[];
     var dynamicQuickReplies=[];
 
@@ -17,16 +17,16 @@ module.exports={
         // console.log(typeof element ,typeof class_code);
         // console.log(element,"is not equal to",class_code);
         let quick_title="Check "+element+" Seats";
-        let quick_payload="class "+element; 
+        let quick_payload="class "+element;
         dynamicQuickReplies.push({
           "content_type":"text",
           "title": quick_title,
           "payload": quick_payload
         });
-      } 
+      }
     });
 
-    console.log("Dynamic Quick Replies built");
+    //console.log("Dynamic Quick Replies built");
     if(train_name =="UNAVAILABLE"){
       var flag=1;
     }
@@ -66,7 +66,7 @@ module.exports={
                     "title":"That's all",
                     "payload":"thanks"
                   })
-    var messageOne="It seems the seats for this class is unavailable at the moment. Try for this train later or go ahead for another train."
+    var messageOne="It seems IRCTC is updating the seats for this class at the moment. Try for this train later or go ahead for another train."
       var facebookResponse={
 
           "speech": "",

@@ -7,8 +7,9 @@ var customResponsePNR = require("./response/pnr");
 var customResponseTrainAvailable = require("./response/trainavailable");
 var customResponseClass = require("./response/travel_class");
 var sendMsg = require("./response/text_Resp");
-var customResponseSeatAvailable = require("./response/seat_availability")
-var seatPrice= require("./src/price.js")
+var customResponseSeatAvailable = require("./response/seat_availability");
+var seatPrice= require("./src/price.js");
+var trainSlotResponse= require("./response/train_slot_response");
 
 
 
@@ -20,7 +21,12 @@ let travellers_data;
         pnrHnadler(request,response);
     }
     else if(request.body.result.action=="TRAINBETWEEN"){
+      if(request.body.result.actionIncomplete==true){
+        trainsSlotHandler(request,response);
+      }
+      else if(request.body.result.actionIncomplete==false){
         trainsHandler(request,response);
+      }
     }
     else if(request.body.result.action=="CLASSQUICK"){
 
@@ -60,6 +66,10 @@ let travellers_data;
   }
 }
 
+  function trainsSlotHandler(request,response){
+    trainSlotResponse.TrainPrompts(request,response);
+  }
+
   function trainsHandler(request,response){
 
     let src=request.body.result.parameters.source;
@@ -78,7 +88,7 @@ let travellers_data;
 
 
     if(doj<now) {
-      customResponseTrainAvailable.pastDate(response);      
+      customResponseTrainAvailable.pastDate(response);
     }else{
       doj =dateformat(doj,"dd-mm-yyyy");
       trainsBetween(src,dest,doj,day,function(train_number,train_name,train_travel_time,train_schedule_arrival,train_schedule_departure,train_cls,err){
@@ -126,11 +136,11 @@ let travellers_data;
       let quota=request.body.result.parameters.quota;
       let age=request.body.result.parameters.age.amount;
       let reqcontext=request.body.result.parameters.reqcontext;
-      
+
       date=dateformat(date,"dd-mm-yyyy");
       console.log("Reformated Date : "+date);
       //console.log("Train No. "+trainNo+" has the following classes : "+cls.join(","));
-      
+
       seatPrice(trainNo,src,dst,date,cls,quota,age,function(err,multidata){
         if(err!=null){
           console.log("Error occuered");

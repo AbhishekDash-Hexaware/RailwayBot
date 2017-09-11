@@ -13,6 +13,7 @@ app.get('/', function(request, response) {
 })
 
 app.post('/webhook',function(request,response){
+  //console.log(JSON.stringify(request.body));
   console.log("WEBHOOK TRIGRED")
   var messege=request.body.result.resolvedQuery;
   console.log("ACTION :",request.body.result.action);
