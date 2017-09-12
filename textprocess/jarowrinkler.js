@@ -38,7 +38,7 @@ module.exports = {
 				var reversed_stations = [];
 
 		    all_station_names.forEach(function(element){
-		      if(natural.JaroWinklerDistance(element.synonyms[0], station_name)>=0.70){
+		      if(natural.JaroWinklerDistance(element.synonyms[0], station_name)>=0.85){
 		      //console.log(natural.JaroWinklerDistance(element.synonyms[0], station_name),element.synonyms[0],station_name);
 					console.log("Confidence Score is "+natural.JaroWinklerDistance(element.synonyms[0], station_name)+" for "+element.synonyms[0]);
 					confidence_score.push(natural.JaroWinklerDistance(element.synonyms[0], station_name));
