@@ -86,7 +86,7 @@ module.exports=function trainsBetween(src,dst,doj,day,callback){
                                 dynamicCode.push(element.classes[j].code);
                             }
                           }
-                          console.log(dynamicCode);
+                          //console.log(dynamicCode);
                           train_cls.push({"code_data":dynamicCode});
                           dynamicCode=[];
 
