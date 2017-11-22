@@ -122,7 +122,7 @@ console.log("Loop End : "+trainlength);
       //console.log("Train "+(i+1)+" pushed to JSON");
     }//end of loop
 
-    // console.log("The Dynamic Body for JSON has been Built");
+     console.log("The Dynamic Body for JSON has been Built : "+JSON.stringify(dynamicBody));
    if(flag==1){
     // console.log("Showing Train Response for Normal Range less than 10");
     var facebookResponse={

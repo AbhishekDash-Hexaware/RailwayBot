@@ -97,7 +97,8 @@ module.exports=function trainsBetween(src,dst,doj,day,callback){
         //console.log(JSON.stringify(train_cls));
         if(train_number.length != 0){
             //msg=trains.join("\n");
-          //  console.log("Trains Exist");
+            console.log("Trains Exist");
+            console.log(train_number,train_name,train_travel_time,train_schedule_arrival,train_schedule_departure,train_cls);
             //console.log(JSON.stringify(train_cls));
 
             callback(train_number,train_name,train_travel_time,train_schedule_arrival,train_schedule_departure,train_cls,null);
