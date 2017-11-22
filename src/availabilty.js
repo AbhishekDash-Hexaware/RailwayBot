@@ -6,7 +6,7 @@ module.exports=function seatAvailability(trainNo,src,dst,date,cls,quota,callback
     //console.log("inside seatAvailability rest call",trainNo,src,dst,date,cls,quota);
     var options = {
     method: 'GET',
-    url: `http://api.railwayapi.com/v2/check-seat/train/${trainNo}/source/${src}/dest/${dst}/date/${date}/class/${cls}/quota/${quota}/apikey/663h5e2h1b/`,
+    url: `http://api.railwayapi.com/v2/check-seat/train/${trainNo}/source/${src}/dest/${dst}/date/${date}/class/${cls}/quota/${quota}/apikey/c8bi9bfbi2/`,
     headers: {
     'postman-token': '69ce0ff9-dee6-47d5-26bf-aef8793353f2',
     'cache-control': 'no-cache' }

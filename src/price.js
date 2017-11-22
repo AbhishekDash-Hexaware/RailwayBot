@@ -25,7 +25,7 @@ function priceInfo(trainNo,src,dst,date,cls,quota,age,callback){
     var price_value;
     var options = {
     method: 'GET',
-    url: `http://api.railwayapi.com/v2/fare/train/${trainNo}/source/${src}/dest/${dst}/age/${age}/quota/${quota}/date/${date}/apikey/663h5e2h1b/`,
+    url: `http://api.railwayapi.com/v2/fare/train/${trainNo}/source/${src}/dest/${dst}/age/${age}/quota/${quota}/date/${date}/apikey/c8bi9bfbi2/`,
     headers:{
       'postman-token': '7d0838a3-e639-1a10-190e-a179de320833',
       'cache-control': 'no-cache'
