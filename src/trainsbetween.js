@@ -45,7 +45,7 @@ module.exports=function trainsBetween(src,dst,doj,day,callback){
             console.log("Today");
             data.trains.forEach(function(element) {
             element.days.forEach(function(element1){
-                if(element.src_departure_time>currentTime && element1.code === day && element1.runs==="Y"){
+                if(element.src_departure_time>currentTime && element1.code === day && element1.runs==true){
                     //trains.push(element.number+" "+element.name+"\n  Travel Time "+element.travel_time+" hrs");
                     console.log("Today's Matches");
                     train_number.push(element.number);
