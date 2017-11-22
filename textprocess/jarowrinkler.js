@@ -2,7 +2,7 @@ var natural = require('natural');
 var station_knowledge=require("../knowledge/station_code");
 module.exports = {
 	conversationNorm: function (station_name) {
-		if(station_name.length<=3){
+		if(station_name.length<3){
 			console.log("Possible Station Code less than length 4 : "+station_name);
 			station_name=station_name.toUpperCase()
 			var all_station_names = station_knowledge.data.entries;
