@@ -42,7 +42,7 @@ module.exports=function trainsBetween(src,dst,doj,day,callback){
         let msg;
         data=JSON.parse(body);
         if(doj===currentDate){
-            //console.log("Today");
+            console.log("Today");
             data.trains.forEach(function(element) {
             element.days.forEach(function(element1){
                 if(element.src_departure_time>currentTime && element1.code === day && element1.runs==="Y"){
@@ -61,7 +61,7 @@ module.exports=function trainsBetween(src,dst,doj,day,callback){
                                 dynamicCode.push(element.classes[j].code);
                             }
                           }
-                          //console.log(dynamicCode);
+                          console.log(dynamicCode);
                           train_cls.push({"code_data":dynamicCode});
                           dynamicCode=[];
                 }
@@ -73,7 +73,7 @@ module.exports=function trainsBetween(src,dst,doj,day,callback){
             data.trains.forEach(function(element) {
                 element.days.forEach(function(element1){
                     if(element1.code === day && element1.runs==="Y"){
-                        //console.log("Tomorrow Onwards matches");
+                        console.log("Tomorrow Onwards matches");
                         //trains.push(element.number+" "+element.name+"\n  Travel Time "+element.travel_time+" hrs");
                         train_number.push(element.number);
                         train_name.push(element.name);
@@ -86,7 +86,7 @@ module.exports=function trainsBetween(src,dst,doj,day,callback){
                                 dynamicCode.push(element.classes[j].code);
                             }
                           }
-                          //console.log(dynamicCode);
+                          console.log(dynamicCode);
                           train_cls.push({"code_data":dynamicCode});
                           dynamicCode=[];
 
