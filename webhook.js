@@ -92,7 +92,8 @@ let travellers_data;
     }else{
       doj =dateformat(doj,"dd-mm-yyyy");
       trainsBetween(src,dest,doj,day,function(train_number,train_name,train_travel_time,train_schedule_arrival,train_schedule_departure,train_cls,err){
-        if(err==null){
+        if(err===null){
+          console.log(err);
           console.log("No err, moving to TrainCarousel");
         customResponseTrainAvailable.TrainCarousel(train_number,train_name,train_travel_time,train_schedule_arrival,train_schedule_departure,train_cls,src,dest,doj,range,response);
         }else{
