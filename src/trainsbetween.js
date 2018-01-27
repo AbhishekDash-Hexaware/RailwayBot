@@ -24,7 +24,7 @@ module.exports=function trainsBetween(src,dst,doj,day,callback){
 
 
         if (error) throw new Error(error);
-         console.log(body);
+        //  console.log(body);
         let train_number =[];
         let train_name = [];
         let train_travel_time=[];
@@ -42,7 +42,8 @@ module.exports=function trainsBetween(src,dst,doj,day,callback){
         let msg;
         data=JSON.parse(body);
         if(doj===currentDate){
-            //console.log("Today");
+            console.log(data);
+            console.log("Today");
             data.trains.forEach(function(element) {
             element.days.forEach(function(element1){
                 if(element.src_departure_time>currentTime && element1.code === day && element1.runs==true){
@@ -69,7 +70,8 @@ module.exports=function trainsBetween(src,dst,doj,day,callback){
           });
         }//End of IF
         else{
-            //console.log("Tomorrow Onwards");
+            console.log("Tomorrow Onwards");
+            console.log(data);
             data.trains.forEach(function(element) {
                 element.days.forEach(function(element1){
                     if(element1.code === day && element1.runs==true){
