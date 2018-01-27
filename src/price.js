@@ -25,7 +25,7 @@ function priceInfo(trainNo,src,dst,date,cls,quota,age,callback){
     var price_value;
     var options = {
     method: 'GET',
-    url: `http://api.railwayapi.com/v2/fare/train/${trainNo}/source/${src}/dest/${dst}/age/${age}/quota/${quota}/date/${date}/apikey/c8bi9bfbi2/`,
+    url: `http://api.railwayapi.com/v2/fare/train/${trainNo}/source/${src}/dest/${dst}/age/${age}/quota/${quota}/date/${date}/apikey/expaallku3/`,
     headers:{
       'postman-token': '7d0838a3-e639-1a10-190e-a179de320833',
       'cache-control': 'no-cache'
@@ -59,7 +59,7 @@ function seatAvailability(trainNo,src,dst,date,cls,quota,callback){
     var request = require("request");
     var options = {
       method: 'GET',
-      url: `http://api.railwayapi.com/v2/check-seat/train/${trainNo}/source/${src}/dest/${dst}/date/${date}/class/${cls}/quota/${quota}/apikey/663h5e2h1b/`,
+      url: `http://api.railwayapi.com/v2/check-seat/train/${trainNo}/source/${src}/dest/${dst}/date/${date}/class/${cls}/quota/${quota}/apikey/expaallku3/`,
     headers: {
       'postman-token': '69ce0ff9-dee6-47d5-26bf-aef8793353f2',
       'cache-control': 'no-cache'

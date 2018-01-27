@@ -4,7 +4,7 @@ module.exports=function pnrStatus(pnr,callback){
 
     var options = {
         method: 'GET',
-        url: `http://api.railwayapi.com/v2/pnr-status/pnr/${pnr}/apikey/c8bi9bfbi2/`
+        url: `http://api.railwayapi.com/v2/pnr-status/pnr/${pnr}/apikey/expaallku3/`
         };
     request(options, function (error, response, body) {
         if (error){

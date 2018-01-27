@@ -3,10 +3,10 @@ module.exports=function seatAvailability(trainNo,src,dst,date,cls,quota,callback
 // function seatAvailability(trainNo,src,dst,date,cls,kota){
     var request = require("request");
 
-    //console.log("inside seatAvailability rest call",trainNo,src,dst,date,cls,quota);
+    console.log("inside seatAvailability rest call",trainNo,src,dst,date,cls,quota);
     var options = {
     method: 'GET',
-    url: `http://api.railwayapi.com/v2/check-seat/train/${trainNo}/source/${src}/dest/${dst}/date/${date}/class/${cls}/quota/${quota}/apikey/c8bi9bfbi2/`,
+    url: `http://api.railwayapi.com/v2/check-seat/train/${trainNo}/source/${src}/dest/${dst}/date/${date}/class/${cls}/quota/${quota}/apikey/expaallku3/`,
     headers: {
     'postman-token': '69ce0ff9-dee6-47d5-26bf-aef8793353f2',
     'cache-control': 'no-cache' }

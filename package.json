@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js"
   },
-  "author": "Pourab Karchaudhuri & Abhishek Dash",
+  "author": "Abhishek Dash",
   "license": "ISC",
   "dependencies": {
     "actions-on-google": "^1.2.0",
