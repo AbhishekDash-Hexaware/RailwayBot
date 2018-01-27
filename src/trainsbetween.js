@@ -58,9 +58,10 @@ module.exports=function trainsBetween(src,dst,doj,day,callback){
 
 
                     for(var j=0;j<element.classes.length;j++){
-                            if(element.classes[j].available==="Y"){
-                                dynamicCode.push(element.classes[j].code);
-                            }
+                        // if(element.classes[j].available==="Y"){
+                            //     dynamicCode.push(element.classes[j].code);
+                            // }
+                            dynamicCode.push(element.classes[j].code);
                           }
                           //console.log(dynamicCode);
                           train_cls.push({"code_data":dynamicCode});
@@ -84,9 +85,10 @@ module.exports=function trainsBetween(src,dst,doj,day,callback){
                         train_schedule_arrival.push(element.dest_arrival_time);
 
                         for(var j=0;j<element.classes.length;j++){
-                            if(element.classes[j].available==="Y"){
-                                dynamicCode.push(element.classes[j].code);
-                            }
+                            // if(element.classes[j].available==="Y"){
+                            //     dynamicCode.push(element.classes[j].code);
+                            // }
+                            dynamicCode.push(element.classes[j].code);
                           }
                           //console.log(dynamicCode);
                           train_cls.push({"code_data":dynamicCode});
