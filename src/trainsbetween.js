@@ -40,13 +40,13 @@ module.exports=function trainsBetween(src,dst,doj,day,callback){
         // Push all classes of single train STEP 1
 
         let msg;
-        data=JSON.parse(body);
+        data=JSON.parse(body);  
         if(doj===currentDate){
             console.log(data);
             console.log("Today");
             data.trains.forEach(function(element) {
             element.days.forEach(function(element1){
-                if(element.src_departure_time>currentTime && element1.code === day && element1.runs==true){
+                if(element.src_departure_time>currentTime && element1.code === day && element1.runs=="Y"){
                     //trains.push(element.number+" "+element.name+"\n  Travel Time "+element.travel_time+" hrs");
                     console.log("Today's Matches");
                     train_number.push(element.number);
@@ -74,7 +74,7 @@ module.exports=function trainsBetween(src,dst,doj,day,callback){
             console.log(data);
             data.trains.forEach(function(element) {
                 element.days.forEach(function(element1){
-                    if(element1.code === day && element1.runs==true){
+                    if(element1.code === day && element1.runs=="Y"){
                         console.log("Tomorrow Onwards matches");
                         //trains.push(element.number+" "+element.name+"\n  Travel Time "+element.travel_time+" hrs");
                         train_number.push(element.number);
